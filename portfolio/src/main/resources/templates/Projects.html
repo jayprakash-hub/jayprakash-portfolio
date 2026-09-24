@@ -1,0 +1,2730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Jayprakash Gupta - Achievements, Hackathons and Certifications">
+
+    <title>Achievements | Jayprakash Gupta</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f8fbff;
+            color: #101828;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+
+            --secondary: #7c3aed;
+
+            --cyan: #06b6d4;
+
+            --pink: #ec4899;
+
+            --green: #10b981;
+
+            --text: #101828;
+
+            --muted: #667085;
+
+            --light-text: #475467;
+
+            --white: #ffffff;
+
+            --border: #e4eaf2;
+
+            --soft-blue: #eef5ff;
+
+            --shadow:
+                    0 15px 45px rgba(16,24,40,.08);
+
+            --shadow-hover:
+                    0 25px 70px rgba(37,99,235,.16);
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .page-background {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -10;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #f8fbff 0%,
+                            #ffffff 45%,
+                            #f6f9ff 100%
+                    );
+        }
+
+
+        .blob {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(2px);
+
+            opacity: .55;
+        }
+
+
+        .blob-one {
+
+            width: 330px;
+            height: 330px;
+
+            background:
+                    rgba(96,165,250,.22);
+
+            top: -170px;
+            left: -120px;
+        }
+
+
+        .blob-two {
+
+            width: 300px;
+            height: 300px;
+
+            background:
+                    rgba(192,132,252,.18);
+
+            right: -130px;
+            top: 70px;
+        }
+
+
+        .blob-three {
+
+            width: 260px;
+            height: 260px;
+
+            background:
+                    rgba(34,211,238,.12);
+
+            left: 35%;
+            bottom: -160px;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: min(1200px, 92%);
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                    rgba(255,255,255,.92);
+
+            backdrop-filter: blur(20px);
+
+            border-bottom:
+                    1px solid rgba(15,23,42,.07);
+
+            box-shadow:
+                    0 5px 25px rgba(15,23,42,.04);
+        }
+
+
+        .navbar {
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            font-size: 29px;
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: #101828;
+        }
+
+
+        .logo span {
+
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 10px 5px;
+
+            color: #475467;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            position: relative;
+
+            transition: .3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+        }
+
+
+        .nav-links a.active {
+
+            color: var(--primary);
+
+            background:
+                    #eef4ff;
+
+            padding:
+                    11px 15px;
+
+            border-radius: 13px;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 3px;
+
+            width: 0;
+
+            height: 2px;
+
+            background:
+                    linear-gradient(
+                            90deg,
+                            var(--primary),
+                            var(--secondary)
+                    );
+
+            transform:
+                    translateX(-50%);
+
+            transition: .3s;
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 60%;
+        }
+
+
+        /* =====================================================
+           NAV BUTTON
+        ===================================================== */
+
+        .hire-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            border-radius: 13px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            box-shadow:
+                    0 10px 25px rgba(37,99,235,.20);
+
+            transition: .3s;
+        }
+
+
+        .hire-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                    0 16px 35px rgba(37,99,235,.30);
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            border: none;
+
+            background: #eef4ff;
+
+            color: var(--primary);
+
+            width: 43px;
+
+            height: 43px;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            padding:
+                    75px 0 45px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 9px 17px;
+
+            border-radius: 50px;
+
+            background:
+                    #edf5ff;
+
+            color:
+                    var(--primary);
+
+            border:
+                    1px solid #dceaff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                    clamp(42px, 5vw, 66px);
+
+            line-height: 1.08;
+
+            letter-spacing: -3px;
+
+            color: #101828;
+
+            margin-bottom: 18px;
+        }
+
+
+        .gradient-text {
+
+            background:
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #4f46e5,
+                            #7c3aed
+                    );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .hero p {
+
+            max-width: 760px;
+
+            margin: auto;
+
+            color: #667085;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           SMALL STATS
+        ===================================================== */
+
+        .achievement-stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-top: 30px;
+        }
+
+
+        .stat-pill {
+
+            padding: 11px 17px;
+
+            border-radius: 50px;
+
+            background: white;
+
+            border:
+                    1px solid #e3eaf4;
+
+            box-shadow:
+                    0 8px 25px rgba(15,23,42,.05);
+
+            color: #475467;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .stat-pill i {
+
+            color: var(--primary);
+
+            margin-right: 6px;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        .section {
+
+            padding:
+                    30px 0 100px;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .section-title span {
+
+            display: inline-block;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 35px;
+
+            letter-spacing: -1.5px;
+
+            color: #101828;
+        }
+
+
+        .section-title p {
+
+            max-width: 680px;
+
+            margin: 10px auto 0;
+
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           CERTIFICATE GRID
+        ===================================================== */
+
+        .certificate-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                    repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        /* =====================================================
+           CERTIFICATE CARD
+        ===================================================== */
+
+        .certificate-card {
+
+            background:
+                    rgba(255,255,255,.96);
+
+            border:
+                    1px solid #e4eaf2;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                    0 12px 35px rgba(16,24,40,.07);
+
+            transition:
+                    transform .35s ease,
+                    box-shadow .35s ease,
+                    border .35s ease;
+
+            position: relative;
+        }
+
+
+        .certificate-card:hover {
+
+            transform:
+                    translateY(-9px);
+
+            border-color:
+                    #cbdcff;
+
+            box-shadow:
+                    var(--shadow-hover);
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ===================================================== */
+
+        .certificate-image {
+
+            height: 205px;
+
+            padding: 12px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #eef5ff,
+                            #f9f5ff
+                    );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .certificate-image::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+
+            height: 130px;
+
+            border-radius: 50%;
+
+            background:
+                    rgba(99,102,241,.08);
+
+            right: -50px;
+
+            top: -50px;
+        }
+
+
+        .certificate-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            background: white;
+
+            border-radius: 13px;
+
+            display: block;
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow:
+                    0 7px 20px rgba(15,23,42,.09);
+
+            transition: .4s;
+        }
+
+
+        .certificate-card:hover
+        .certificate-image img {
+
+            transform:
+                    scale(1.025);
+        }
+
+
+        /* =====================================================
+           YEAR BADGE
+        ===================================================== */
+
+        .year-badge {
+
+            position: absolute;
+
+            top: 21px;
+
+            right: 21px;
+
+            z-index: 5;
+
+            padding: 8px 13px;
+
+            border-radius: 30px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            box-shadow:
+                    0 8px 20px rgba(37,99,235,.25);
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+        ===================================================== */
+
+        .certificate-content {
+
+            padding:
+                    24px 23px 23px;
+        }
+
+
+        .certificate-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #edf5ff,
+                            #eef0ff
+                    );
+
+            color: var(--primary);
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .certificate-content h3 {
+
+            font-size: 18px;
+
+            color: #101828;
+
+            margin-bottom: 8px;
+
+            line-height: 1.35;
+        }
+
+
+        .certificate-content p {
+
+            color: #667085;
+
+            font-size: 12px;
+
+            line-height: 1.75;
+
+            min-height: 63px;
+
+            margin-bottom: 14px;
+        }
+
+
+        /* =====================================================
+           TAGS
+        ===================================================== */
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .tag {
+
+            padding: 6px 10px;
+
+            border-radius: 30px;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color: #2563eb;
+
+            background:
+                    #eef5ff;
+
+            border:
+                    1px solid #dceaff;
+        }
+
+
+        .tag.green {
+
+            color: #059669;
+
+            background: #ecfdf5;
+
+            border-color: #d1fae5;
+        }
+
+
+        .tag.purple {
+
+            color: #7c3aed;
+
+            background: #f5f3ff;
+
+            border-color: #e9d5ff;
+        }
+
+
+        .tag.pink {
+
+            color: #db2777;
+
+            background: #fdf2f8;
+
+            border-color: #fbcfe8;
+        }
+
+
+        /* =====================================================
+           VIEW BUTTON
+        ===================================================== */
+
+        .view-certificate {
+
+            width: 100%;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 12px 16px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            color: var(--primary);
+
+            background:
+                    #edf5ff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+
+        .view-certificate:hover {
+
+            color: white;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            transform:
+                    translateY(-2px);
+        }
+
+
+        /* =====================================================
+           CERTIFICATE MODAL
+        ===================================================== */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 5000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            background:
+                    rgba(15,23,42,.72);
+
+            backdrop-filter:
+                    blur(12px);
+        }
+
+
+        .modal.show {
+
+            display: flex;
+        }
+
+
+        .modal-box {
+
+            width: min(1050px, 96vw);
+
+            max-height: 92vh;
+
+            background: white;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                    0 35px 100px rgba(0,0,0,.28);
+
+            animation:
+                    modalIn .3s ease;
+        }
+
+
+        @keyframes modalIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                        translateY(20px)
+                        scale(.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                        translateY(0)
+                        scale(1);
+            }
+        }
+
+
+        .modal-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 18px 22px;
+
+            border-bottom:
+                    1px solid #e8edf4;
+        }
+
+
+        .modal-label {
+
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 5px;
+        }
+
+
+        .modal-title {
+
+            color: #101828;
+
+            font-size: 20px;
+
+            font-weight: 800;
+        }
+
+
+        .close-modal {
+
+            width: 42px;
+
+            height: 42px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #f2f4f7;
+
+            color: #344054;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            transition: .25s;
+        }
+
+
+        .close-modal:hover {
+
+            color: white;
+
+            background: #ef4444;
+
+            transform: rotate(90deg);
+        }
+
+
+        .modal-body {
+
+            max-height: 76vh;
+
+            overflow: auto;
+
+            padding: 22px;
+
+            background: #f8fafc;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .modal-body img {
+
+            max-width: 100%;
+
+            max-height: 68vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            box-shadow:
+                    0 15px 40px rgba(15,23,42,.12);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #ffffff;
+
+            border-top:
+                    1px solid #e5eaf1;
+
+            padding:
+                    45px 0 22px;
+        }
+
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .footer-brand {
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            color: #101828;
+        }
+
+
+        .footer-brand span {
+
+            color: var(--primary);
+        }
+
+
+        .footer-text {
+
+            color: #667085;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+
+            max-width: 400px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .footer-links a {
+
+            width: 39px;
+
+            height: 39px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            color: #475467;
+
+            background: #f2f5f9;
+
+            transition: .3s;
+        }
+
+
+        .footer-links a:hover {
+
+            color: white;
+
+            background:
+                    var(--primary);
+
+            transform:
+                    translateY(-3px);
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                    1px solid #e8edf3;
+
+            margin-top: 30px;
+
+            padding-top: 18px;
+
+            text-align: center;
+
+            color: #98a2b3;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           SCROLL TOP
+        ===================================================== */
+
+        #topBtn {
+
+            position: fixed;
+
+            right: 22px;
+
+            bottom: 22px;
+
+            width: 46px;
+
+            height: 46px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            box-shadow:
+                    0 10px 25px rgba(37,99,235,.25);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .3s;
+
+            z-index: 1000;
+        }
+
+
+        #topBtn.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        #topBtn:hover {
+
+            transform:
+                    translateY(-4px);
+        }
+
+
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                    translateY(25px);
+
+            transition:
+                    opacity .7s ease,
+                    transform .7s ease;
+        }
+
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                    translateY(0);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:1050px) {
+
+            .nav-links {
+
+                gap: 13px;
+            }
+
+            .nav-links a {
+
+                font-size: 11px;
+            }
+
+            .certificate-grid {
+
+                grid-template-columns:
+                        repeat(2, 1fr);
+            }
+        }
+
+
+        @media(max-width:850px) {
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .nav-links.mobile {
+
+                position: absolute;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 2px;
+
+                left: 4%;
+
+                top: 75px;
+
+                width: 92%;
+
+                padding: 12px;
+
+                background: white;
+
+                border:
+                        1px solid #e4eaf2;
+
+                border-radius: 17px;
+
+                box-shadow:
+                        0 20px 50px rgba(15,23,42,.13);
+            }
+
+
+            .nav-links.mobile a {
+
+                padding: 13px 14px;
+
+                border-radius: 10px;
+            }
+
+
+            .nav-links.mobile a.active {
+
+                padding: 13px 14px;
+            }
+
+
+            .menu-btn {
+
+                display: block;
+            }
+
+
+            .hire-btn {
+
+                display: none;
+            }
+
+
+            .certificate-grid {
+
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media(max-width:600px) {
+
+            .container {
+
+                width: 91%;
+            }
+
+
+            .navbar {
+
+                min-height: 70px;
+            }
+
+
+            .hero {
+
+                padding-top: 55px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 39px;
+
+                letter-spacing: -1.8px;
+            }
+
+
+            .hero p {
+
+                font-size: 14px;
+            }
+
+
+            .section {
+
+                padding-bottom: 70px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 29px;
+            }
+
+
+            .certificate-image {
+
+                height: 215px;
+            }
+
+
+            .certificate-content {
+
+                padding: 22px 20px;
+            }
+
+
+            .modal {
+
+                padding: 12px;
+            }
+
+
+            .modal-box {
+
+                border-radius: 17px;
+            }
+
+
+            .modal-body {
+
+                padding: 12px;
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media(prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation: none !important;
+
+                transition: none !important;
+
+                scroll-behavior: auto !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="page-background">
+
+    <div class="blob blob-one"></div>
+
+    <div class="blob blob-two"></div>
+
+    <div class="blob blob-three"></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header>
+
+    <div class="container navbar">
+
+
+        <a href="index.html"
+           class="logo">
+
+            JP<span>.</span>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links"
+                id="navLinks">
+
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="About.html">
+                        <i class="fa-solid fa-user"></i>
+                        About
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Skills.html">
+                        <i class="fa-solid fa-code"></i>
+                        Skills
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Experience.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Experience
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Projects.html">
+                        <i class="fa-solid fa-folder"></i>
+                        Projects
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Achievements.html"
+                       class="active">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                        Achievements
+
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Education.html">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Education
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Contact.html">
+                        <i class="fa-solid fa-envelope"></i>
+                        Contact
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+
+        <div style="
+            display:flex;
+            align-items:center;
+            gap:10px;
+        ">
+
+
+            <a href="Contact.html"
+               class="hire-btn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Hire Me
+
+            </a>
+
+
+            <button
+                    class="menu-btn"
+                    id="menuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="container">
+
+
+        <div class="hero-badge">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            MY ACHIEVEMENTS
+
+        </div>
+
+
+        <h1>
+
+            Achievements &
+
+            <span class="gradient-text">
+                Certifications
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            A collection of my hackathon participation,
+            certifications, internships and technical
+            achievements that represent my learning,
+            development and practical experience.
+
+        </p>
+
+
+        <div class="achievement-stats">
+
+
+            <div class="stat-pill">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                Hackathons
+
+            </div>
+
+
+            <div class="stat-pill">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                Certifications
+
+            </div>
+
+
+            <div class="stat-pill">
+
+                <i class="fa-solid fa-code"></i>
+
+                Technical Learning
+
+            </div>
+
+
+            <div class="stat-pill">
+
+                <i class="fa-solid fa-rocket"></i>
+
+                Project Experience
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <span>
+                Certificates & Recognition
+            </span>
+
+            <h2>
+                My Learning & Achievement Journey
+            </h2>
+
+            <p>
+
+                Certificates and recognitions earned through
+                hackathons, training programs, internships
+                and technical learning.
+
+            </p>
+
+        </div>
+
+
+        <div class="certificate-grid">
+
+
+            <!-- =================================================
+                 SIH 2025
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/Hackathon Participation.jpg"
+                            alt="Smart India Hackathon 2025 Certificate">
+
+                    <div class="year-badge">
+                        🏆 2025
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Smart India Hackathon 2025
+                    </h3>
+
+
+                    <p>
+
+                        Participated in Smart India Hackathon
+                        and worked with a team on an innovative
+                        technology-based problem statement.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Hackathon
+                        </span>
+
+                        <span class="tag green">
+                            2025
+                        </span>
+
+                        <span class="tag purple">
+                            Team Project
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/Hackathon Participation.jpg',
+                            'Smart India Hackathon 2025'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 SIH 2026
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/Win Hackathon.jpg"
+                            alt="Smart India Hackathon 2026 Certificate">
+
+                    <div class="year-badge">
+                        🏆 2026
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-solid fa-medal"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Smart India Hackathon 2026
+                    </h3>
+
+
+                    <p>
+
+                        Participated in SIH 2026 and contributed
+                        to the development, presentation and
+                        team project work.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag pink">
+                            Innovation
+                        </span>
+
+                        <span class="tag green">
+                            2026
+                        </span>
+
+                        <span class="tag purple">
+                            Team Project
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/Win Hackathon.jpg',
+                            'Smart India Hackathon 2026'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 NIIT
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/NIIT Foundation cirificate.jpg"
+                            alt="NIIT Foundation Certificate">
+
+                    <div class="year-badge">
+                        🎓 Training
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                    </div>
+
+
+                    <h3>
+                        NIIT Foundation Certificate
+                    </h3>
+
+
+                    <p>
+
+                        Successfully completed technical
+                        training and developed practical
+                        knowledge in software and technology.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Training
+                        </span>
+
+                        <span class="tag green">
+                            Technical
+                        </span>
+
+                        <span class="tag purple">
+                            Professional
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/NIIT Foundation cirificate.jpg',
+                            'NIIT Foundation Certificate'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 YPSILON
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/Ypsilon.jpg"
+                            alt="Ypsilon IT Solutions Certificate">
+
+                    <div class="year-badge">
+                        💼 Internship
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-solid fa-code"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Ypsilon IT Solutions
+                    </h3>
+
+
+                    <p>
+
+                        Internship and practical learning
+                        experience involving programming,
+                        development and technical projects.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag green">
+                            Django
+                        </span>
+
+                        <span class="tag purple">
+                            Internship
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/Ypsilon.jpg',
+                            'Ypsilon IT Solutions'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 JAVA
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/java.jpg"
+                            alt="Java Programming Certificate">
+
+                    <div class="year-badge">
+                        ☕ Java
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-brands fa-java"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Java Programming
+                    </h3>
+
+
+                    <p>
+
+                        Successfully completed Java programming
+                        learning and strengthened knowledge of
+                        core programming concepts.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Java
+                        </span>
+
+                        <span class="tag green">
+                            Programming
+                        </span>
+
+                        <span class="tag purple">
+                            Technical
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/java.jpg',
+                            'Java Programming Certificate'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 CODE ALPHA
+            ================================================== -->
+
+            <article class="certificate-card reveal">
+
+
+                <div class="certificate-image">
+
+                    <img
+                            src="/images/Code Alpha.jpg"
+                            alt="Code Alpha Certificate">
+
+                    <div class="year-badge">
+                        💻 2024
+                    </div>
+
+                </div>
+
+
+                <div class="certificate-content">
+
+
+                    <div class="certificate-icon">
+
+                        <i class="fa-solid fa-laptop"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Code Alpha
+                    </h3>
+
+
+                    <p>
+
+                        Completed a development-focused
+                        program and worked on practical
+                        programming and web development tasks.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Web Development
+                        </span>
+
+                        <span class="tag green">
+                            Internship
+                        </span>
+
+                        <span class="tag purple">
+                            Projects
+                        </span>
+
+                    </div>
+
+
+                    <button
+                            class="view-certificate"
+                            onclick="openCertificate(
+                            '/images/Code Alpha.jpg',
+                            'Code Alpha Certificate'
+                            )">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Certificate
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CERTIFICATE MODAL
+===================================================== -->
+
+<div class="modal"
+     id="certificateModal">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <div class="modal-label">
+                    Certificate Preview
+                </div>
+
+                <div class="modal-title"
+                     id="modalTitle">
+
+                    Certificate
+
+                </div>
+
+            </div>
+
+
+            <button
+                    class="close-modal"
+                    id="closeModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <img
+                    id="modalImage"
+                    src=""
+                    alt="Certificate Preview">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="container">
+
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="footer-brand">
+
+                    JP<span>.</span>
+
+                </div>
+
+
+                <p class="footer-text">
+
+                    Software development enthusiast focused
+                    on Java, Spring Boot, web development,
+                    Android, AI/ML and practical technology
+                    solutions.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <a href="https://github.com/"
+                   target="_blank"
+                   title="GitHub">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   title="LinkedIn">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                </a>
+
+
+                <a href="Contact.html"
+                   title="Contact">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © <span id="year"></span>
+            Jayprakash Gupta. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button id="topBtn">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+        "click",
+        function () {
+
+            navLinks.classList.toggle("mobile");
+
+            if (
+                navLinks.classList.contains("mobile")
+            ) {
+
+                menuBtn.innerHTML =
+                    '<i class="fa-solid fa-xmark"></i>';
+
+            } else {
+
+                menuBtn.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            }
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navLinks.classList.remove("mobile");
+
+                    menuBtn.innerHTML =
+                        '<i class="fa-solid fa-bars"></i>';
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       CERTIFICATE MODAL
+    ===================================================== */
+
+    const modal =
+        document.getElementById(
+            "certificateModal"
+        );
+
+
+    const modalImage =
+        document.getElementById(
+            "modalImage"
+        );
+
+
+    const modalTitle =
+        document.getElementById(
+            "modalTitle"
+        );
+
+
+    const closeModal =
+        document.getElementById(
+            "closeModal"
+        );
+
+
+    function openCertificate(
+        imagePath,
+        title
+    ) {
+
+        modalImage.src =
+            imagePath;
+
+        modalImage.alt =
+            title;
+
+        modalTitle.textContent =
+            title;
+
+        modal.classList.add("show");
+
+        document.body.style.overflow =
+            "hidden";
+    }
+
+
+    closeModal.addEventListener(
+        "click",
+        function () {
+
+            closeCertificate();
+
+        }
+    );
+
+
+    function closeCertificate() {
+
+        modal.classList.remove("show");
+
+        document.body.style.overflow =
+            "";
+
+        modalImage.src =
+            "";
+    }
+
+
+    modal.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                event.target === modal
+            ) {
+
+                closeCertificate();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeCertificate();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       REVEAL ANIMATION
+    ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(
+                    function (entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+
+    revealElements.forEach(
+        function (element) {
+
+            observer.observe(element);
+
+        }
+    );
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const topBtn =
+        document.getElementById(
+            "topBtn"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (
+                window.scrollY > 450
+            ) {
+
+                topBtn.classList.add(
+                    "show"
+                );
+
+            } else {
+
+                topBtn.classList.remove(
+                    "show"
+                );
+
+            }
+
+        }
+    );
+
+
+    topBtn.addEventListener(
+        "click",
+        function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    document.getElementById(
+        "year"
+    ).textContent =
+        new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Achievements | Jayprakash Gupta</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 13, 24, 0.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00e5ff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #d4d9df;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #00e5ff;
+        }
+
+        .login-btn {
+            border: 1px solid #00e5ff;
+            padding: 8px 18px;
+            border-radius: 25px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 70px;
+
+            background:
+                    radial-gradient(
+                            circle at 50% 20%,
+                            rgba(0,229,255,0.16),
+                            transparent 40%
+                    );
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+
+            background: rgba(0,229,255,0.08);
+            border: 1px solid rgba(0,229,255,0.3);
+
+            color: #00e5ff;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #aeb8c5;
+            font-size: 18px;
+        }
+
+        /* ================= ACHIEVEMENT SECTION ================= */
+
+        .achievements-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 25px 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+        }
+
+        .section-title p {
+            color: #8995a5;
+            margin-top: 10px;
+        }
+
+        /* ================= CARDS ================= */
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 28px;
+        }
+
+        .achievement-card {
+            position: relative;
+            overflow: hidden;
+
+            background:
+                    linear-gradient(
+                            145deg,
+                            rgba(255,255,255,0.06),
+                            rgba(255,255,255,0.025)
+                    );
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 22px;
+
+            transition: 0.4s;
+
+            box-shadow:
+                    0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #00e5ff;
+
+            box-shadow:
+                    0 20px 50px rgba(0,229,255,0.12);
+        }
+
+        /* ================= IMAGE ================= */
+
+        .achievement-image {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+            background: #0c1928;
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .achievement-card:hover
+        .achievement-image img {
+            transform: scale(1.06);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                    linear-gradient(
+                            to top,
+                            rgba(0,0,0,0.65),
+                            transparent
+                    );
+        }
+
+        /* ================= BADGE ================= */
+
+        .achievement-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            padding: 7px 14px;
+
+            border-radius: 30px;
+
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(8px);
+
+            color: #00e5ff;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            border: 1px solid rgba(0,229,255,0.3);
+        }
+
+        /* ================= CARD CONTENT ================= */
+
+        .achievement-content {
+            padding: 28px;
+        }
+
+        .achievement-content h3 {
+            color: #ffffff;
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .achievement-content .subtitle {
+            color: #00e5ff;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .achievement-content p {
+            color: #aeb8c5;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ================= META ================= */
+
+        .achievement-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .meta-item {
+            padding: 7px 12px;
+
+            background: #0b1a2b;
+
+            border: 1px solid #20364e;
+
+            border-radius: 20px;
+
+            color: #bfc8d3;
+
+            font-size: 13px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .achievement-actions {
+            display: flex;
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 11px 18px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #00e5ff;
+            color: #001018;
+        }
+
+        .secondary-btn {
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= FEATURED ACHIEVEMENT ================= */
+
+        .featured {
+            grid-column: span 2;
+        }
+
+        .featured .achievement-image {
+            height: 300px;
+        }
+
+        @media(max-width: 800px) {
+
+            .featured {
+                grid-column: span 1;
+            }
+
+            .featured .achievement-image {
+                height: 230px;
+            }
+
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #0c1928;
+
+            border: 1px solid #1c3048;
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: #00e5ff;
+            transform: translateY(-5px);
+        }
+
+        .stat-card h2 {
+            color: #00e5ff;
+            font-size: 36px;
+        }
+
+        .stat-card p {
+            color: #9da8b6;
+            margin-top: 5px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+
+            background: #040b14;
+
+            color: #8995a5;
+
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer span {
+            color: #00e5ff;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-actions {
+                flex-direction: column;
+            }
+
+            .achievement-actions .btn {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            JP<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/about">About</a>
+            </li>
+
+            <li>
+                <a href="/skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="/experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="/projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="/achievements" class="active">
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="/education">Education</a>
+            </li>
+
+            <li>
+                <a href="/contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="/login" class="login-btn">
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+        🏆 ACHIEVEMENTS & RECOGNITION
+    </div>
+
+    <h1>
+        My <span>Achievements</span>
+    </h1>
+
+    <p>
+        A collection of hackathon achievements, competition
+        recognitions, certificates and memorable milestones
+        from my software development journey.
+    </p>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<section class="achievements-section">
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h2>2+</h2>
+
+            <p>
+                Years of SIH Participation
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h2>2nd</h2>
+
+            <p>
+                Private Hackathon Rank
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h2>3+</h2>
+
+            <p>
+                Major Achievements
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h2>∞</h2>
+
+            <p>
+                Learning & Building
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+        <h2>
+            Highlights of My <span>Journey</span>
+        </h2>
+
+        <p>
+            Click "View Certificate" to open the original certificate.
+        </p>
+
+    </div>
+
+
+    <!-- ================= ACHIEVEMENT CARDS ================= -->
+
+    <div class="achievement-grid">
+
+
+        <!-- SIH 2025 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-image">
+
+                <!-- Replace with your actual photo -->
+
+                <img
+                        src="/images/achievements/sih-2025.jpg"
+                        alt="Smart India Hackathon 2025">
+
+                <div class="image-overlay"></div>
+
+                <div class="achievement-badge">
+                    SIH
+                </div>
+
+            </div>
+
+
+            <div class="achievement-content">
+
+                <h3>
+                    Smart India Hackathon
+                </h3>
+
+                <div class="subtitle">
+                    SIH 2025
+                </div>
+
+                <p>
+                    Participated in Smart India Hackathon and
+                    worked with a team to develop an innovative
+                    technology-based solution.
+                </p>
+
+                <div class="achievement-meta">
+
+                    <span class="meta-item">
+                        🏆 Hackathon
+                    </span>
+
+                    <span class="meta-item">
+                        📅 2025
+                    </span>
+
+                    <span class="meta-item">
+                        👥 Team Project
+                    </span>
+
+                </div>
+
+                <div class="achievement-actions">
+
+                    <a
+                            href="/certificates/sih-2025.pdf"
+                            target="_blank"
+                            class="btn primary-btn">
+
+                        📜 View Certificate
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIH 2026 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-image">
+
+                <img
+                        src="/images/achievements/sih-2026.jpg"
+                        alt="Smart India Hackathon 2026">
+
+                <div class="image-overlay"></div>
+
+                <div class="achievement-badge">
+                    SIH
+                </div>
+
+            </div>
+
+
+            <div class="achievement-content">
+
+                <h3>
+                    Smart India Hackathon
+                </h3>
+
+                <div class="subtitle">
+                    SIH 2026
+                </div>
+
+                <p>
+                    Participated in Smart India Hackathon and
+                    contributed to the development and presentation
+                    of the team project.
+                </p>
+
+                <div class="achievement-meta">
+
+                    <span class="meta-item">
+                        🚀 Innovation
+                    </span>
+
+                    <span class="meta-item">
+                        📅 2026
+                    </span>
+
+                    <span class="meta-item">
+                        👥 Team Project
+                    </span>
+
+                </div>
+
+                <div class="achievement-actions">
+
+                    <a
+                            href="/certificates/sih-2026.pdf"
+                            target="_blank"
+                            class="btn primary-btn">
+
+                        📜 View Certificate
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRIVATE HACKATHON -->
+
+        <div class="achievement-card featured">
+
+            <div class="achievement-image">
+
+                <img
+                        src="/images/achievements/private-hackathon.jpg"
+                        alt="Private Hackathon Achievement">
+
+                <div class="image-overlay"></div>
+
+                <div class="achievement-badge">
+                    🥈 2ND RANK
+                </div>
+
+            </div>
+
+
+            <div class="achievement-content">
+
+                <h3>
+                    Private Hackathon
+                </h3>
+
+                <div class="subtitle">
+                    🥈 Second Rank
+                </div>
+
+                <p>
+                    Secured second rank in a private hackathon
+                    by developing and presenting a technology-based
+                    solution with the team.
+                </p>
+
+                <div class="achievement-meta">
+
+                    <span class="meta-item">
+                        🥈 2nd Rank
+                    </span>
+
+                    <span class="meta-item">
+                        💻 Hackathon
+                    </span>
+
+                    <span class="meta-item">
+                        🏆 Achievement
+                    </span>
+
+                </div>
+
+                <div class="achievement-actions">
+
+                    <a
+                            href="/certificates/private-hackathon.pdf"
+                            target="_blank"
+                            class="btn primary-btn">
+
+                        📜 View Certificate
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © <span id="year"></span>
+    Jayprakash Gupta.
+    All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
+</body>
+
+</html>

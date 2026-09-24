@@ -1,0 +1,3670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Jayprakash Gupta - Skills and Technologies">
+
+    <title>Skills | Jayprakash Gupta</title>
+
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f8fbff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --primary: #2563eb;
+            --purple: #7c3aed;
+            --cyan: #0891b2;
+            --pink: #db2777;
+            --green: #16a34a;
+            --orange: #ea580c;
+
+            --dark: #0f172a;
+            --text: #1e293b;
+            --muted: #64748b;
+
+            --white: #ffffff;
+
+            --border: #e2e8f0;
+
+            --shadow:
+                    0 15px 45px rgba(15, 23, 42, .07);
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .14;
+            animation: floating 10s ease-in-out infinite alternate;
+        }
+
+        .orb.one {
+            width: 350px;
+            height: 350px;
+            background: #6366f1;
+            top: -130px;
+            left: -100px;
+        }
+
+        .orb.two {
+            width: 320px;
+            height: 320px;
+            background: #22d3ee;
+            right: -120px;
+            top: 30%;
+            animation-delay: 2s;
+        }
+
+        .orb.three {
+            width: 300px;
+            height: 300px;
+            background: #f472b6;
+            bottom: -130px;
+            left: 40%;
+            animation-delay: 4s;
+        }
+
+        @keyframes floating {
+
+            from {
+                transform: translate(0,0);
+            }
+
+            to {
+                transform: translate(40px,30px);
+            }
+        }
+
+
+        /* =====================================================
+           GRID
+        ===================================================== */
+
+        .grid-bg {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -9;
+
+            pointer-events: none;
+
+            opacity: .45;
+
+            background-image:
+
+                    linear-gradient(
+                            rgba(15,23,42,.035) 1px,
+                            transparent 1px
+                    ),
+
+                    linear-gradient(
+                            90deg,
+                            rgba(15,23,42,.035) 1px,
+                            transparent 1px
+                    );
+
+            background-size: 55px 55px;
+        }
+
+
+        /* =====================================================
+           PROGRESS
+        ===================================================== */
+
+        #progress {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 0;
+
+            height: 4px;
+
+            z-index: 9999;
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed,
+                            #06b6d4
+                    );
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                    rgba(255,255,255,.90);
+
+            backdrop-filter:
+                    blur(18px);
+
+            border-bottom:
+                    1px solid
+                    rgba(15,23,42,.08);
+
+            box-shadow:
+                    0 5px 25px
+                    rgba(15,23,42,.05);
+        }
+
+        .navbar {
+
+            width: min(1400px,92%);
+
+            min-height: 80px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: #0f172a;
+        }
+
+        .logo span {
+            color: #06b6d4;
+        }
+
+
+        /* NAV LINKS */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 11px 13px;
+
+            border-radius: 11px;
+
+            color: #475569;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .nav-links a i {
+            font-size: 11px;
+        }
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+            background:
+                    rgba(37,99,235,.07);
+
+        }
+
+        .nav-links a.active {
+
+            color: var(--primary);
+
+            background:
+                    rgba(37,99,235,.10);
+
+        }
+
+
+        /* HIRE */
+
+        .hire-btn {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 19px;
+
+            border-radius: 12px;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            background:
+
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            box-shadow:
+                    0 10px 25px
+                    rgba(37,99,235,.20);
+
+            transition: .3s;
+        }
+
+        .hire-btn:hover {
+
+            transform:
+                    translateY(-3px);
+
+            box-shadow:
+                    0 15px 35px
+                    rgba(37,99,235,.30);
+        }
+
+
+        /* MOBILE BUTTON */
+
+        .menu-btn {
+
+            display: none;
+
+            width: 43px;
+
+            height: 43px;
+
+            border:
+                    1px solid var(--border);
+
+            border-radius: 12px;
+
+            background: white;
+
+            color: #0f172a;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: min(1400px,92%);
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            padding:
+                    75px 0 35px;
+        }
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr .9fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        /* LEFT */
+
+        .hero-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                    9px 15px;
+
+            border-radius: 30px;
+
+            background:
+                    rgba(37,99,235,.08);
+
+            border:
+                    1px solid
+                    rgba(37,99,235,.14);
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+
+            color: #0f172a;
+
+            font-size:
+                    clamp(45px,5.5vw,72px);
+
+            line-height: 1.03;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed,
+                            #0891b2
+                    );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+
+            max-width: 760px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* HERO STATS */
+
+        .hero-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .hero-stat {
+
+            padding: 17px;
+
+            background: white;
+
+            border:
+                    1px solid var(--border);
+
+            border-radius: 16px;
+
+            box-shadow:
+                    0 8px 25px
+                    rgba(15,23,42,.04);
+
+            text-align: center;
+
+            transition: .3s;
+        }
+
+        .hero-stat:hover {
+
+            transform:
+                    translateY(-5px);
+
+            border-color:
+                    rgba(37,99,235,.25);
+        }
+
+        .hero-stat strong {
+
+            display: block;
+
+            color: var(--primary);
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            margin-bottom: 4px;
+        }
+
+        .hero-stat span {
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           HERO PHOTO
+        ===================================================== */
+
+        .hero-photo {
+
+            position: relative;
+
+            min-height: 420px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .photo-glow {
+
+            position: absolute;
+
+            width: 330px;
+
+            height: 330px;
+
+            border-radius: 50%;
+
+            background:
+
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #22d3ee
+                    );
+
+            filter: blur(70px);
+
+            opacity: .20;
+        }
+
+        .photo-ring {
+
+            position: absolute;
+
+            width: 390px;
+
+            height: 390px;
+
+            border-radius: 50%;
+
+            border:
+                    2px dashed
+                    rgba(37,99,235,.25);
+
+            animation:
+                    rotate 22s linear infinite;
+        }
+
+        @keyframes rotate {
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-frame {
+
+            position: relative;
+
+            width: 290px;
+
+            height: 365px;
+
+            padding: 5px;
+
+            border-radius:
+                    45px 45px 100px 45px;
+
+            background:
+
+                    linear-gradient(
+                            135deg,
+                            #06b6d4,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            box-shadow:
+                    0 30px 80px
+                    rgba(37,99,235,.20);
+
+            z-index: 2;
+        }
+
+        .photo-frame img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            display: block;
+
+            border-radius:
+                    40px 40px 95px 40px;
+
+            background: #e2e8f0;
+        }
+
+
+        /* FLOATING BADGES */
+
+        .floating-badge {
+
+            position: absolute;
+
+            z-index: 5;
+
+            padding:
+                    12px 15px;
+
+            background:
+                    rgba(255,255,255,.96);
+
+            border:
+                    1px solid
+                    var(--border);
+
+            border-radius: 14px;
+
+            box-shadow:
+                    0 15px 40px
+                    rgba(15,23,42,.12);
+
+            animation:
+                    badgeFloat 4s ease-in-out infinite;
+        }
+
+        .floating-badge strong {
+
+            display: block;
+
+            color: #0f172a;
+
+            font-size: 12px;
+
+            margin-bottom: 3px;
+        }
+
+        .floating-badge span {
+
+            color: var(--muted);
+
+            font-size: 9px;
+        }
+
+        .badge-one {
+
+            top: 40px;
+
+            right: 0;
+        }
+
+        .badge-two {
+
+            left: 0;
+
+            bottom: 45px;
+
+            animation-delay: 1s;
+        }
+
+        @keyframes badgeFloat {
+
+            50% {
+                transform:
+                        translateY(-10px);
+            }
+        }
+
+
+        /* =====================================================
+           SECTION HEADER
+        ===================================================== */
+
+        .section {
+
+            padding: 75px 0;
+        }
+
+        .section-header {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+
+            display: inline-block;
+
+            color: var(--primary);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+        .section-header h2 {
+
+            color: #0f172a;
+
+            font-size:
+                    clamp(32px,4vw,48px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 span {
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+
+            max-width: 720px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           FILTERS
+        ===================================================== */
+
+        .filters {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+
+            padding:
+                    10px 17px;
+
+            border:
+                    1px solid var(--border);
+
+            border-radius: 30px;
+
+            background: white;
+
+            color: #64748b;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .filter-btn:hover {
+
+            color: var(--primary);
+
+            border-color:
+                    var(--primary);
+        }
+
+        .filter-btn.active {
+
+            color: white;
+
+            border-color:
+                    var(--primary);
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            box-shadow:
+                    0 8px 20px
+                    rgba(37,99,235,.18);
+        }
+
+
+        /* =====================================================
+           SKILLS GRID
+        ===================================================== */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+        }
+
+        .skill-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 25px;
+
+            border-radius: 22px;
+
+            background:
+                    rgba(255,255,255,.94);
+
+            border:
+                    1px solid var(--border);
+
+            box-shadow:
+                    0 10px 35px
+                    rgba(15,23,42,.05);
+
+            transition:
+                    transform .35s,
+                    box-shadow .35s,
+                    border .35s;
+
+            animation:
+                    cardIn .5s ease;
+        }
+
+        .skill-card:hover {
+
+            transform:
+                    translateY(-8px);
+
+            border-color:
+                    rgba(37,99,235,.28);
+
+            box-shadow:
+                    0 22px 55px
+                    rgba(15,23,42,.10);
+        }
+
+        .skill-card.hide {
+
+            display: none;
+        }
+
+        @keyframes cardIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* CARD TOP */
+
+        .skill-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 12px;
+
+            margin-bottom: 17px;
+        }
+
+        .skill-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 16px;
+
+            font-size: 26px;
+
+            color: var(--primary);
+
+            background:
+                    rgba(37,99,235,.08);
+        }
+
+        .skill-card:nth-child(2)
+        .skill-icon {
+
+            color: #7c3aed;
+
+            background:
+                    rgba(124,58,237,.09);
+        }
+
+        .skill-card:nth-child(3)
+        .skill-icon {
+
+            color: #0891b2;
+
+            background:
+                    rgba(8,145,178,.09);
+        }
+
+        .skill-card:nth-child(4)
+        .skill-icon {
+
+            color: #ea580c;
+
+            background:
+                    rgba(234,88,12,.09);
+        }
+
+        .skill-card:nth-child(5)
+        .skill-icon {
+
+            color: #16a34a;
+
+            background:
+                    rgba(22,163,74,.09);
+        }
+
+        .skill-card:nth-child(6)
+        .skill-icon {
+
+            color: #db2777;
+
+            background:
+                    rgba(219,39,119,.09);
+        }
+
+        .skill-card:nth-child(7)
+        .skill-icon {
+
+            color: #2563eb;
+
+            background:
+                    rgba(37,99,235,.09);
+        }
+
+        .skill-card:nth-child(8)
+        .skill-icon {
+
+            color: #7c3aed;
+
+            background:
+                    rgba(124,58,237,.09);
+        }
+
+        .skill-card:nth-child(9)
+        .skill-icon {
+
+            color: #0891b2;
+
+            background:
+                    rgba(8,145,178,.09);
+        }
+
+        .skill-card:nth-child(10)
+        .skill-icon {
+
+            color: #ea580c;
+
+            background:
+                    rgba(234,88,12,.09);
+        }
+
+        .skill-card:nth-child(11)
+        .skill-icon {
+
+            color: #16a34a;
+
+            background:
+                    rgba(22,163,74,.09);
+        }
+
+        .skill-card:nth-child(12)
+        .skill-icon {
+
+            color: #db2777;
+
+            background:
+                    rgba(219,39,119,.09);
+        }
+
+
+        /* CATEGORY */
+
+        .category {
+
+            padding:
+                    6px 10px;
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            color: var(--primary);
+
+            background:
+                    rgba(37,99,235,.07);
+        }
+
+
+        /* CARD TEXT */
+
+        .skill-card h3 {
+
+            color: #0f172a;
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-card h3 span {
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-card p {
+
+            min-height: 54px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            margin-bottom: 17px;
+        }
+
+
+        /* PROGRESS */
+
+        .progress-info {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 7px;
+        }
+
+        .progress-info span {
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .progress-info strong {
+
+            color: var(--primary);
+
+            font-size: 11px;
+        }
+
+        .progress-bar {
+
+            width: 100%;
+
+            height: 7px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                    #e9eef5;
+        }
+
+        .progress-bar span {
+
+            display: block;
+
+            width: 0;
+
+            height: 100%;
+
+            border-radius: 20px;
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            transition:
+                    width 1.3s ease;
+        }
+
+
+        /* =====================================================
+           SPECIAL HIGHLIGHT
+        ===================================================== */
+
+        .featured {
+
+            border:
+                    2px solid
+                    rgba(37,99,235,.18);
+
+            background:
+
+                    linear-gradient(
+                            145deg,
+                            #ffffff,
+                            #f4f7ff
+                    );
+        }
+
+        .featured::before {
+
+            content: "CORE SKILL";
+
+            position: absolute;
+
+            top: 0;
+
+            right: 0;
+
+            padding:
+                    7px 12px;
+
+            color: white;
+
+            font-size: 8px;
+
+            font-weight: 900;
+
+            border-radius:
+                    0 20px 0 12px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+        }
+
+
+        /* =====================================================
+           TOOLS
+        ===================================================== */
+
+        .tools-box {
+
+            margin-top: 35px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            rgba(37,99,235,.06),
+                            rgba(124,58,237,.05)
+                    );
+
+            border:
+                    1px solid
+                    rgba(37,99,235,.12);
+        }
+
+        .tools-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .tools-title i {
+
+            width: 48px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 14px;
+
+            color: white;
+
+            background:
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+        }
+
+        .tools-title h3 {
+
+            color: #0f172a;
+
+            font-size: 23px;
+        }
+
+        .tools-title p {
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            margin-top: 3px;
+        }
+
+        .tools-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 11px;
+        }
+
+        .tool {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                    11px 14px;
+
+            background: white;
+
+            border:
+                    1px solid var(--border);
+
+            border-radius: 12px;
+
+            color: #334155;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+        .tool i {
+
+            color: var(--primary);
+
+            font-size: 16px;
+        }
+
+        .tool:hover {
+
+            transform:
+                    translateY(-4px);
+
+            border-color:
+                    var(--primary);
+
+            box-shadow:
+                    0 10px 25px
+                    rgba(37,99,235,.09);
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+
+            margin:
+                    45px 0 80px;
+
+            padding:
+                    65px 25px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+
+                    radial-gradient(
+                            circle at center,
+                            rgba(37,99,235,.11),
+                            transparent 60%
+                    ),
+
+                    white;
+
+            border:
+                    1px solid
+                    rgba(37,99,235,.15);
+
+            box-shadow:
+                    0 20px 60px
+                    rgba(15,23,42,.07);
+        }
+
+        .cta h2 {
+
+            color: #0f172a;
+
+            font-size:
+                    clamp(30px,4vw,45px);
+
+            margin-bottom: 12px;
+        }
+
+        .cta h2 span {
+
+            background:
+
+                    linear-gradient(
+                            90deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta p {
+
+            max-width: 700px;
+
+            margin:
+                    auto auto 25px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .cta-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                    14px 22px;
+
+            border-radius: 12px;
+
+            color: white;
+
+            background:
+
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            box-shadow:
+                    0 12px 30px
+                    rgba(37,99,235,.20);
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+
+            transform:
+                    translateY(-4px);
+
+            box-shadow:
+                    0 18px 40px
+                    rgba(37,99,235,.30);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding:
+                    35px 0;
+
+            background:
+                    #0f172a;
+
+            color: white;
+        }
+
+        .footer {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-logo {
+
+            font-size: 26px;
+
+            font-weight: 900;
+        }
+
+        .footer-logo span {
+
+            color: #22d3ee;
+        }
+
+        .footer p {
+
+            color: #94a3b8;
+
+            font-size: 11px;
+
+            margin-top: 5px;
+        }
+
+        .footer-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+        }
+
+        .footer-links a {
+
+            color: #cbd5e1;
+
+            font-size: 11px;
+
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+
+            color: #22d3ee;
+        }
+
+
+        /* =====================================================
+           TOP BUTTON
+        ===================================================== */
+
+        #topBtn {
+
+            position: fixed;
+
+            right: 23px;
+
+            bottom: 23px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            color: white;
+
+            background:
+
+                    linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #7c3aed
+                    );
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: .3s;
+
+            z-index: 999;
+        }
+
+        #topBtn.show {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* =====================================================
+           REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                    translateY(30px);
+
+            transition:
+                    opacity .7s ease,
+                    transform .7s ease;
+        }
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                    translateY(0);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media(max-width:1100px) {
+
+            .nav-links a {
+
+                padding:
+                        10px 8px;
+
+                font-size: 11px;
+            }
+
+            .hero-grid {
+
+                grid-template-columns:
+                    1fr 350px;
+            }
+
+            .skills-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE NAV
+        ===================================================== */
+
+        @media(max-width:900px) {
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+
+                left: 4%;
+
+                width: 92%;
+
+                padding: 15px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                background:
+                        rgba(255,255,255,.98);
+
+                border:
+                        1px solid var(--border);
+
+                border-radius: 18px;
+
+                box-shadow:
+                        0 25px 60px
+                        rgba(15,23,42,.15);
+            }
+
+            .nav-links.show {
+
+                display: flex;
+            }
+
+            .nav-links a {
+
+                padding: 14px;
+            }
+
+            .menu-btn {
+
+                display: block;
+            }
+
+            .hire-btn {
+
+                display: none;
+            }
+
+            .hero-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                text-align: center;
+            }
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-stats {
+
+                max-width: 650px;
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-photo {
+
+                order: -1;
+            }
+
+            .photo-frame {
+
+                width: 270px;
+
+                height: 340px;
+            }
+
+            .photo-ring {
+
+                width: 350px;
+
+                height: 350px;
+            }
+
+            .skills-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media(max-width:600px) {
+
+            .container {
+
+                width: 90%;
+            }
+
+            .hero {
+
+                padding-top: 50px;
+            }
+
+            .hero h1 {
+
+                font-size: 44px;
+
+                letter-spacing: -2.5px;
+            }
+
+            .hero-description {
+
+                font-size: 15px;
+            }
+
+            .hero-stats {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .skills-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .skill-card p {
+
+                min-height: auto;
+            }
+
+            .floating-badge {
+
+                transform: scale(.85);
+            }
+
+            .badge-one {
+
+                right: -15px;
+            }
+
+            .badge-two {
+
+                left: -15px;
+            }
+
+            .tools-box {
+
+                padding: 22px;
+            }
+
+            .footer {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .footer-links {
+
+                justify-content: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+    <div class="orb one"></div>
+
+    <div class="orb two"></div>
+
+    <div class="orb three"></div>
+
+</div>
+
+<div class="grid-bg"></div>
+
+<div id="progress"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header>
+
+    <div class="navbar">
+
+
+        <a href="index.html"
+           class="logo">
+
+            JP<span>.</span>
+
+        </a>
+
+
+        <nav>
+
+            <ul class="nav-links"
+                id="navLinks">
+
+
+                <li>
+
+                    <a href="index.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="About.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Skills.html"
+                       class="active">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        Skills
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Experience.html">
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        Experience
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Projects.html">
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                        Projects
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Achievements.html">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                        Achievements
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Education.html">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        Education
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="Contact.html">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+
+        <a href="Contact.html"
+           class="hire-btn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Hire Me
+
+        </a>
+
+
+        <button class="menu-btn"
+                id="menuBtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="container">
+
+
+            <div class="hero-grid">
+
+
+                <!-- TEXT -->
+
+                <div class="reveal">
+
+
+                    <div class="hero-label">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        My Technical Skills
+
+                    </div>
+
+
+                    <h1>
+
+                        Skills &
+
+                        <br>
+
+                        <span class="highlight">
+                        Technologies
+                    </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        These are the programming languages,
+                        frameworks, development technologies
+                        and tools that I have learned and worked
+                        with through projects, practice and
+                        real-world application development.
+
+                    </p>
+
+
+                    <div class="hero-stats">
+
+
+                        <div class="hero-stat">
+
+                            <strong>12+</strong>
+
+                            <span>
+                            Technologies
+                        </span>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>8+</strong>
+
+                            <span>
+                            Languages
+                        </span>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>6+</strong>
+
+                            <span>
+                            Tools
+                        </span>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>3+</strong>
+
+                            <span>
+                            Years Learning
+                        </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PHOTO -->
+
+                <div class="hero-photo reveal">
+
+
+                    <div class="photo-glow"></div>
+
+                    <div class="photo-ring"></div>
+
+
+                    <div class="photo-frame">
+
+                        <img
+                                src="/images/profile.png"
+                                alt="Jayprakash Gupta">
+
+                    </div>
+
+
+                    <div class="floating-badge badge-one">
+
+                        <strong>
+                            <i class="fa-solid fa-code"></i>
+                            Developer
+                        </strong>
+
+                        <span>
+                        Java • Web • Backend
+                    </span>
+
+                    </div>
+
+
+                    <div class="floating-badge badge-two">
+
+                        <strong>
+                            <i class="fa-solid fa-robot"></i>
+                            AI Enthusiast
+                        </strong>
+
+                        <span>
+                        AI / ML • RAG
+                    </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS SECTION
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-header reveal">
+
+
+                <div class="section-label">
+
+                    TECHNICAL EXPERTISE
+
+                </div>
+
+
+                <h2>
+
+                    My <span>Skills</span> & Expertise
+
+                </h2>
+
+
+                <p>
+
+                    A collection of programming languages,
+                    frameworks and technologies I use while
+                    building software projects.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filters reveal">
+
+
+                <button class="filter-btn active"
+                        data-filter="all">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    All
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="programming">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    Programming
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="backend">
+
+                    <i class="fa-solid fa-server"></i>
+
+                    Backend
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="web">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Web
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="database">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    Database
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="mobile">
+
+                    <i class="fa-solid fa-mobile-screen"></i>
+
+                    Mobile
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="ai">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    AI / ML
+
+                </button>
+
+
+                <button class="filter-btn"
+                        data-filter="tools">
+
+                    <i class="fa-solid fa-toolbox"></i>
+
+                    Tools
+
+                </button>
+
+
+            </div>
+
+
+            <!-- SKILL CARDS -->
+
+            <div class="skills-grid"
+                 id="skillsGrid">
+
+
+                <!-- JAVA -->
+
+                <div class="skill-card featured reveal"
+                     data-category="programming">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-java"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Programming
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Java</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Core Java, OOP, Collections,
+                        Exception Handling, Multithreading
+                        and application development.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>85%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="85%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- C -->
+
+                <div class="skill-card featured reveal"
+                     data-category="programming">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-c"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Programming
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>C</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        C programming, fundamentals,
+                        functions, arrays, pointers,
+                        structures and problem solving.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>75%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="75%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- C++ -->
+
+                <div class="skill-card featured reveal"
+                     data-category="programming">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Programming
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>C++</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        OOP, STL, classes, inheritance,
+                        polymorphism, data structures
+                        and problem solving.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="78%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PYTHON -->
+
+                <div class="skill-card reveal"
+                     data-category="programming">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-python"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Programming
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Python</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Python programming, data handling,
+                        automation and AI/ML fundamentals.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>80%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="80%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- SPRING BOOT -->
+
+                <div class="skill-card featured reveal"
+                     data-category="backend">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Framework
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Spring Boot</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        REST APIs, MVC architecture,
+                        database integration, JPA,
+                        Hibernate and backend development.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>80%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="80%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- WEB -->
+
+                <div class="skill-card reveal"
+                     data-category="web">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-html5"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Web
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Web Development</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        HTML, CSS, JavaScript, responsive
+                        design, modern UI and interactive
+                        websites.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>85%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="85%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- DATABASE -->
+
+                <div class="skill-card reveal"
+                     data-category="database">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-database"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Database
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Database</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        MySQL, SQL, database design,
+                        queries, joins, CRUD operations
+                        and relational databases.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>80%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="80%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ANDROID -->
+
+                <div class="skill-card reveal"
+                     data-category="mobile">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-brands fa-android"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Mobile
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Android Development</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Android application development
+                        with Java/Kotlin, Firebase and
+                        Android Studio.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>75%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="75%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- AI ML -->
+
+                <div class="skill-card reveal"
+                     data-category="ai">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <span class="category">
+                        AI / ML
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>AI / ML</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Machine Learning concepts,
+                        Python libraries, AI applications,
+                        RAG and intelligent assistants.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>70%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="70%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- TOOLS -->
+
+                <div class="skill-card reveal"
+                     data-category="tools">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-toolbox"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Tools
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Tools & Technologies</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Git, GitHub, VS Code, IntelliJ IDEA,
+                        Android Studio, Maven and development
+                        tools.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>80%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="80%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PROBLEM SOLVING -->
+
+                <div class="skill-card reveal"
+                     data-category="programming">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-bullseye"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Core Skill
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Problem Solving</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Logical thinking, algorithms,
+                        data structures and breaking
+                        complex problems into smaller parts.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>75%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="75%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- COMMUNICATION -->
+
+                <div class="skill-card reveal"
+                     data-category="tools">
+
+
+                    <div class="skill-top">
+
+                        <div class="skill-icon">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <span class="category">
+                        Soft Skill
+                    </span>
+
+                    </div>
+
+
+                    <h3>
+
+                        <span>Communication</span>
+
+                    </h3>
+
+
+                    <p>
+
+                        Team collaboration, presentation,
+                        technical communication and
+                        project discussions.
+
+                    </p>
+
+
+                    <div class="progress-info">
+
+                        <span>Skill Level</span>
+
+                        <strong>75%</strong>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <span data-width="75%"></span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 TOOLS & PLATFORMS
+            ================================================== -->
+
+            <div class="tools-box reveal">
+
+
+                <div class="tools-title">
+
+
+                    <i class="fa-solid fa-wrench"></i>
+
+
+                    <div>
+
+                        <h3>
+                            Tools & Platforms
+                        </h3>
+
+                        <p>
+                            Tools and platforms I use while
+                            developing and testing projects.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="tools-list">
+
+
+                    <div class="tool">
+
+                        <i class="fa-brands fa-git-alt"></i>
+
+                        Git
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-brands fa-github"></i>
+
+                        GitHub
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        VS Code
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        IntelliJ IDEA
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-brands fa-android"></i>
+
+                        Android Studio
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        MySQL
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Postman
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                        Maven
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-solid fa-fire"></i>
+
+                        Firebase
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <i class="fa-brands fa-docker"></i>
+
+                        Docker
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+
+            <div class="cta reveal">
+
+
+                <h2>
+
+                    Let's Build Something
+
+                    <span>
+                    Amazing
+                </span>
+
+                </h2>
+
+
+                <p>
+
+                    I am always interested in learning new
+                    technologies, building practical projects
+                    and collaborating on innovative software
+                    solutions.
+
+                </p>
+
+
+                <a href="Projects.html"
+                   class="cta-btn">
+
+                    <i class="fa-solid fa-rocket"></i>
+
+                    Explore My Projects
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                JP<span>.</span>
+
+            </div>
+
+            <p>
+
+                Jayprakash Gupta • Aspiring Software Engineer
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="About.html">
+                About
+            </a>
+
+            <a href="Projects.html">
+                Projects
+            </a>
+
+            <a href="Achievements.html">
+                Achievements
+            </a>
+
+            <a href="Education.html">
+                Education
+            </a>
+
+            <a href="Contact.html">
+                Contact
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- TOP -->
+
+<button id="topBtn">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle("show");
+
+
+            if (
+                navLinks.classList.contains("show")
+            ) {
+
+                menuBtn.innerHTML =
+                    '<i class="fa-solid fa-xmark"></i>';
+
+            } else {
+
+                menuBtn.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+            }
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove("show");
+
+                    menuBtn.innerHTML =
+                        '<i class="fa-solid fa-bars"></i>';
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       FILTER SYSTEM
+    ===================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const skillCards =
+        document.querySelectorAll(".skill-card");
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+
+                filterButtons.forEach(btn => {
+
+                    btn.classList.remove("active");
+
+                });
+
+
+                button.classList.add("active");
+
+
+                const filter =
+                    button.dataset.filter;
+
+
+                skillCards.forEach(card => {
+
+
+                    if (
+                        filter === "all"
+                        ||
+                        card.dataset.category === filter
+                    ) {
+
+                        card.classList.remove("hide");
+
+                    } else {
+
+                        card.classList.add("hide");
+
+                    }
+
+                });
+
+
+                setTimeout(
+                    startProgressBars,
+                    100
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       REVEAL
+    ===================================================== */
+
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+
+    document
+        .querySelectorAll(".reveal")
+        .forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+    /* =====================================================
+       PROGRESS BARS
+    ===================================================== */
+
+    let progressStarted = false;
+
+
+    function startProgressBars() {
+
+        document
+            .querySelectorAll(
+                ".skill-card:not(.hide) .progress-bar span"
+            )
+            .forEach(bar => {
+
+                bar.style.width =
+                    bar.dataset.width;
+
+            });
+
+    }
+
+
+    const skillSection =
+        document.querySelector(".skills-grid");
+
+
+    const skillObserver =
+        new IntersectionObserver(
+            entries => {
+
+                if (
+                    entries[0].isIntersecting
+                ) {
+
+                    startProgressBars();
+
+                    progressStarted = true;
+
+                }
+
+            },
+            {
+                threshold: .2
+            }
+        );
+
+
+    skillObserver.observe(skillSection);
+
+
+    /* =====================================================
+       SCROLL PROGRESS
+    ===================================================== */
+
+    const progress =
+        document.getElementById("progress");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const total =
+                document.documentElement.scrollHeight
+                -
+                window.innerHeight;
+
+
+            const percentage =
+                total > 0
+                    ?
+                    (
+                        window.scrollY /
+                        total
+                    ) * 100
+                    :
+                    0;
+
+
+            progress.style.width =
+                percentage + "%";
+
+        }
+    );
+
+
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
+
+    const topBtn =
+        document.getElementById("topBtn");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (
+                window.scrollY > 500
+            ) {
+
+                topBtn.classList.add("show");
+
+            } else {
+
+                topBtn.classList.remove("show");
+
+            }
+
+        }
+    );
+
+
+    topBtn.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+    /* =====================================================
+       ACTIVE PAGE
+    ===================================================== */
+
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
+
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (!href) return;
+
+
+            const page =
+                href
+                    .split("/")
+                    .pop()
+                    .toLowerCase();
+
+
+            if (
+                page === currentPage
+            ) {
+
+                document
+                    .querySelectorAll(".nav-links a")
+                    .forEach(item => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+</script>
+
+
+</body>
+
+</html>

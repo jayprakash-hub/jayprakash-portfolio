@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="About Jayprakash Gupta - BCA Student and Aspiring Software Engineer">
+
+  <title>About | Jayprakash Gupta</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONT
+  ====================================================== -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+
+    /* =====================================================
+       RESET
+    ====================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      font-family: "Inter", sans-serif;
+
+      background: #f8fafc;
+
+      color: #0f172a;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+    ====================================================== */
+
+    :root {
+
+      --primary: #4f46e5;
+
+      --primary-light: #6366f1;
+
+      --secondary: #7c3aed;
+
+      --cyan: #0891b2;
+
+      --blue: #2563eb;
+
+      --pink: #db2777;
+
+      --green: #16a34a;
+
+      --dark: #0f172a;
+
+      --text: #1e293b;
+
+      --muted: #64748b;
+
+      --light-muted: #94a3b8;
+
+      --white: #ffffff;
+
+      --bg: #f8fafc;
+
+      --card: #ffffff;
+
+      --border: #e2e8f0;
+
+      --shadow:
+              0 15px 45px rgba(15, 23, 42, .07);
+    }
+
+
+    /* =====================================================
+       PAGE BACKGROUND
+    ====================================================== */
+
+    .background {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -5;
+
+      pointer-events: none;
+
+      overflow: hidden;
+    }
+
+
+    .orb {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(80px);
+
+      opacity: .16;
+
+      animation:
+              floatOrb 10s ease-in-out infinite alternate;
+    }
+
+
+    .orb-one {
+
+      width: 350px;
+
+      height: 350px;
+
+      background: #818cf8;
+
+      top: -120px;
+
+      left: -100px;
+    }
+
+
+    .orb-two {
+
+      width: 300px;
+
+      height: 300px;
+
+      background: #22d3ee;
+
+      top: 35%;
+
+      right: -120px;
+
+      animation-delay: 2s;
+    }
+
+
+    .orb-three {
+
+      width: 300px;
+
+      height: 300px;
+
+      background: #f472b6;
+
+      bottom: -150px;
+
+      left: 35%;
+
+      animation-delay: 4s;
+    }
+
+
+    @keyframes floatOrb {
+
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(40px, 30px);
+      }
+    }
+
+
+    /* =====================================================
+       GRID BACKGROUND
+    ====================================================== */
+
+    .grid-bg {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -4;
+
+      opacity: .5;
+
+      pointer-events: none;
+
+      background-image:
+
+              linear-gradient(
+                      rgba(15, 23, 42, .035) 1px,
+                      transparent 1px
+              ),
+
+              linear-gradient(
+                      90deg,
+                      rgba(15, 23, 42, .035) 1px,
+                      transparent 1px
+              );
+
+      background-size: 60px 60px;
+
+      mask-image:
+              linear-gradient(
+                      to bottom,
+                      black,
+                      transparent 90%
+              );
+    }
+
+
+    /* =====================================================
+       SCROLL PROGRESS
+    ====================================================== */
+
+    #progress {
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      width: 0;
+
+      height: 4px;
+
+      z-index: 9999;
+
+      background:
+
+              linear-gradient(
+                      90deg,
+                      var(--primary),
+                      var(--cyan),
+                      var(--pink)
+              );
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+              rgba(255,255,255,.88);
+
+      backdrop-filter:
+              blur(18px);
+
+      border-bottom:
+              1px solid
+              rgba(15,23,42,.08);
+
+      box-shadow:
+              0 5px 25px
+              rgba(15,23,42,.05);
+    }
+
+
+    .navbar {
+
+      width: min(1400px, 92%);
+
+      min-height: 82px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* =====================================================
+       LOGO
+    ====================================================== */
+
+    .logo {
+
+      font-size: 30px;
+
+      font-weight: 900;
+
+      letter-spacing: -2px;
+
+      color: var(--dark);
+    }
+
+
+    .logo span {
+
+      color: var(--cyan);
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ====================================================== */
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      list-style: none;
+    }
+
+
+    .nav-links a {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding: 11px 13px;
+
+      border-radius: 11px;
+
+      color: #475569;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      transition: .3s;
+    }
+
+
+    .nav-links a i {
+
+      font-size: 11px;
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--primary);
+
+      background:
+              rgba(79,70,229,.07);
+    }
+
+
+    .nav-links a.active {
+
+      color: var(--primary);
+
+      background:
+              rgba(79,70,229,.09);
+    }
+
+
+    /* =====================================================
+       HIRE BUTTON
+    ====================================================== */
+
+    .hire-btn {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 13px 19px;
+
+      border-radius: 12px;
+
+      color: white;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      background:
+
+              linear-gradient(
+                      135deg,
+                      var(--primary),
+                      var(--secondary)
+              );
+
+      box-shadow:
+
+              0 10px 25px
+              rgba(79,70,229,.20);
+
+      transition: .3s;
+    }
+
+
+    .hire-btn:hover {
+
+      transform:
+              translateY(-3px);
+
+      box-shadow:
+
+              0 15px 35px
+              rgba(79,70,229,.30);
+    }
+
+
+    /* =====================================================
+       MOBILE MENU
+    ====================================================== */
+
+    .menu-btn {
+
+      display: none;
+
+      width: 43px;
+
+      height: 43px;
+
+      border:
+              1px solid var(--border);
+
+      border-radius: 12px;
+
+      background: white;
+
+      color: var(--dark);
+
+      font-size: 18px;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       CONTAINER
+    ====================================================== */
+
+    .container {
+
+      width: min(1400px, 92%);
+
+      margin: auto;
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      padding:
+              90px 0 70px;
+    }
+
+
+    .hero-grid {
+
+      display: grid;
+
+      grid-template-columns:
+                380px 1fr 320px;
+
+      gap: 45px;
+
+      align-items: center;
+    }
+
+
+    /* =====================================================
+       PROFILE IMAGE
+    ====================================================== */
+
+    .profile-area {
+
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+    }
+
+
+    .profile-glow {
+
+      position: absolute;
+
+      width: 320px;
+
+      height: 320px;
+
+      border-radius: 50%;
+
+      background:
+
+              linear-gradient(
+                      135deg,
+                      #6366f1,
+                      #22d3ee
+              );
+
+      filter: blur(70px);
+
+      opacity: .20;
+    }
+
+
+    .profile-frame {
+
+      position: relative;
+
+      width: 330px;
+
+      height: 420px;
+
+      padding: 5px;
+
+      border-radius:
+              40px 40px 100px 40px;
+
+      background:
+
+              linear-gradient(
+                      135deg,
+                      #06b6d4,
+                      #6366f1,
+                      #8b5cf6
+              );
+
+      box-shadow:
+
+              0 30px 80px
+              rgba(79,70,229,.18);
+    }
+
+
+    .profile-frame img {
+
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center top;
+
+      border-radius:
+              36px 36px 96px 36px;
+
+      background: #e2e8f0;
+    }
+
+
+    /* =====================================================
+       OPEN TO WORK CARD
+    ====================================================== */
+
+    .open-card {
+
+      position: absolute;
+
+      left: -35px;
+
+      bottom: 25px;
+
+      padding:
+              15px 19px;
+
+      border-radius: 15px;
+
+      background:
+              rgba(255,255,255,.96);
+
+      border:
+              1px solid
+              rgba(15,23,42,.08);
+
+      box-shadow:
+
+              0 18px 45px
+              rgba(15,23,42,.13);
+
+      backdrop-filter:
+              blur(15px);
+    }
+
+
+    .open-status {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: var(--green);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      margin-bottom: 6px;
+    }
+
+
+    .status-dot {
+
+      width: 9px;
+
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #22c55e;
+
+      box-shadow:
+
+              0 0 0 5px
+              rgba(34,197,94,.10);
+    }
+
+
+    .open-card p {
+
+      color: var(--muted);
+
+      font-size: 10px;
+    }
+
+
+    /* =====================================================
+       HERO CONTENT
+    ====================================================== */
+
+    .hero-content {
+
+      max-width: 700px;
+    }
+
+
+    .small-label {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding:
+              9px 15px;
+
+      border-radius: 30px;
+
+      color: var(--primary);
+
+      background:
+              rgba(79,70,229,.07);
+
+      border:
+              1px solid
+              rgba(79,70,229,.15);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+
+    .hero-content h1 {
+
+      color: var(--dark);
+
+      font-size:
+              clamp(45px, 5vw, 70px);
+
+      line-height: 1.02;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .gradient {
+
+      background:
+
+              linear-gradient(
+                      90deg,
+                      #0891b2,
+                      #4f46e5,
+                      #7c3aed
+              );
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    .role {
+
+      color: #334155;
+
+      font-size: 22px;
+
+      font-weight: 800;
+
+      margin-bottom: 22px;
+    }
+
+
+    .role span {
+
+      color: var(--cyan);
+
+      margin: 0 7px;
+    }
+
+
+    .hero-description {
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      margin-bottom: 28px;
+
+      max-width: 700px;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ====================================================== */
+
+    .hero-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-bottom: 24px;
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding:
+              14px 20px;
+
+      border-radius: 12px;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      transition: .3s;
+    }
+
+
+    .btn-primary {
+
+      color: white;
+
+      background:
+
+              linear-gradient(
+                      135deg,
+                      var(--primary),
+                      var(--secondary)
+              );
+
+      box-shadow:
+
+              0 10px 28px
+              rgba(79,70,229,.20);
+    }
+
+
+    .btn-primary:hover {
+
+      transform:
+              translateY(-4px);
+
+      box-shadow:
+
+              0 17px 35px
+              rgba(79,70,229,.30);
+    }
+
+
+    .btn-outline {
+
+      color: #334155;
+
+      background: white;
+
+      border:
+              1px solid var(--border);
+
+      box-shadow:
+              0 5px 20px
+              rgba(15,23,42,.04);
+    }
+
+
+    .btn-outline:hover {
+
+      transform:
+              translateY(-4px);
+
+      color: var(--primary);
+
+      border-color:
+              var(--primary);
+    }
+
+
+    /* =====================================================
+       SOCIAL
+    ====================================================== */
+
+    .socials {
+
+      display: flex;
+
+      gap: 9px;
+    }
+
+
+    .social {
+
+      width: 43px;
+
+      height: 43px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #64748b;
+
+      background: white;
+
+      border:
+              1px solid var(--border);
+
+      border-radius: 12px;
+
+      transition: .3s;
+    }
+
+
+    .social:hover {
+
+      color: var(--primary);
+
+      border-color:
+              var(--primary);
+
+      transform:
+              translateY(-4px);
+
+      box-shadow:
+              0 10px 25px
+              rgba(79,70,229,.10);
+    }
+
+
+    /* =====================================================
+       PERSONAL INFORMATION
+    ====================================================== */
+
+    .info-card {
+
+      padding: 25px;
+
+      border-radius: 23px;
+
+      background:
+              rgba(255,255,255,.90);
+
+      border:
+              1px solid
+              var(--border);
+
+      box-shadow:
+              var(--shadow);
+    }
+
+
+    .info-title {
+
+      color: var(--dark);
+
+      font-size: 19px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .info-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 14px 0;
+
+      border-bottom:
+              1px solid
+              #eef2f7;
+    }
+
+
+    .info-item:last-child {
+
+      border-bottom: none;
+    }
+
+
+    .info-icon {
+
+      min-width: 43px;
+
+      width: 43px;
+
+      height: 43px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 13px;
+
+      color: var(--primary);
+
+      background:
+              rgba(79,70,229,.08);
+    }
+
+
+    .info-item small {
+
+      display: block;
+
+      color: #94a3b8;
+
+      font-size: 10px;
+
+      margin-bottom: 4px;
+    }
+
+
+    .info-item strong {
+
+      display: block;
+
+      color: #1e293b;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       STATS
+    ====================================================== */
+
+    .stats {
+
+      display: grid;
+
+      grid-template-columns:
+                repeat(4, 1fr);
+
+      padding: 25px;
+
+      margin-bottom: 50px;
+
+      border:
+              1px solid
+              var(--border);
+
+      border-radius: 22px;
+
+      background:
+              rgba(255,255,255,.90);
+
+      box-shadow:
+              var(--shadow);
+    }
+
+
+    .stat {
+
+      text-align: center;
+
+      border-right:
+              1px solid
+              var(--border);
+    }
+
+
+    .stat:last-child {
+
+      border-right: none;
+    }
+
+
+    .stat i {
+
+      color: var(--cyan);
+
+      font-size: 23px;
+
+      margin-bottom: 7px;
+    }
+
+
+    .stat h3 {
+
+      color: var(--dark);
+
+      font-size: 30px;
+
+      margin-bottom: 5px;
+    }
+
+
+    .stat p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+    ====================================================== */
+
+    .section {
+
+      padding: 85px 0;
+    }
+
+
+    .section-header {
+
+      margin-bottom: 40px;
+    }
+
+
+    .section-label {
+
+      color: var(--primary);
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 9px;
+    }
+
+
+    .section-header h2 {
+
+      color: var(--dark);
+
+      font-size:
+              clamp(32px,4vw,48px);
+
+      letter-spacing: -2px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .section-header p {
+
+      color: var(--muted);
+
+      font-size: 16px;
+
+      line-height: 1.8;
+
+      max-width: 750px;
+    }
+
+
+    /* =====================================================
+       STORY
+    ====================================================== */
+
+    .story-grid {
+
+      display: grid;
+
+      grid-template-columns:
+                1fr 1fr;
+
+      gap: 24px;
+    }
+
+
+    .glass-card {
+
+      padding: 35px;
+
+      border-radius: 24px;
+
+      background:
+              rgba(255,255,255,.92);
+
+      border:
+              1px solid
+              var(--border);
+
+      box-shadow:
+              var(--shadow);
+
+      transition: .35s;
+    }
+
+
+    .glass-card:hover {
+
+      transform:
+              translateY(-7px);
+
+      border-color:
+              rgba(79,70,229,.25);
+
+      box-shadow:
+              0 25px 65px
+              rgba(15,23,42,.10);
+    }
+
+
+    .card-heading {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: var(--dark);
+
+      font-size: 23px;
+
+      margin-bottom: 18px;
+    }
+
+
+    .card-heading i {
+
+      color: var(--primary);
+    }
+
+
+    .story-text {
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      margin-bottom: 15px;
+    }
+
+
+    .highlight {
+
+      color: var(--primary);
+
+      font-weight: 800;
+    }
+
+
+    /* =====================================================
+       MINDSET
+    ====================================================== */
+
+    .values {
+
+      display: grid;
+
+      grid-template-columns:
+                repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+
+    .value-card {
+
+      padding: 28px;
+
+      border-radius: 21px;
+
+      background:
+              white;
+
+      border:
+              1px solid
+              var(--border);
+
+      box-shadow:
+              0 10px 35px
+              rgba(15,23,42,.05);
+
+      transition: .3s;
+    }
+
+
+    .value-card:hover {
+
+      transform:
+              translateY(-7px);
+
+      border-color:
+              rgba(6,182,212,.30);
+
+      box-shadow:
+              0 20px 50px
+              rgba(15,23,42,.09);
+    }
+
+
+    .value-icon {
+
+      width: 54px;
+
+      height: 54px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 15px;
+
+      color: var(--cyan);
+
+      background:
+              rgba(6,182,212,.09);
+
+      font-size: 21px;
+
+      margin-bottom: 16px;
+    }
+
+
+    .value-card h3 {
+
+      color: var(--dark);
+
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .value-card p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       TECHNOLOGIES
+    ====================================================== */
+
+    .tech-grid {
+
+      display: grid;
+
+      grid-template-columns:
+                repeat(4, 1fr);
+
+      gap: 16px;
+    }
+
+
+    .tech-card {
+
+      padding: 27px 20px;
+
+      text-align: center;
+
+      border-radius: 20px;
+
+      background: white;
+
+      border:
+              1px solid
+              var(--border);
+
+      box-shadow:
+              0 8px 30px
+              rgba(15,23,42,.04);
+
+      transition: .3s;
+    }
+
+
+    .tech-card:hover {
+
+      transform:
+              translateY(-7px)
+              scale(1.02);
+
+      border-color:
+              rgba(79,70,229,.30);
+
+      box-shadow:
+              0 20px 45px
+              rgba(79,70,229,.10);
+    }
+
+
+    .tech-card i {
+
+      color: var(--primary);
+
+      font-size: 33px;
+
+      margin-bottom: 14px;
+    }
+
+
+    .tech-card h3 {
+
+      color: var(--dark);
+
+      font-size: 16px;
+
+      margin-bottom: 6px;
+    }
+
+
+    .tech-card p {
+
+      color: var(--muted);
+
+      font-size: 11px;
+    }
+
+
+    /* =====================================================
+       JOURNEY
+    ====================================================== */
+
+    .journey {
+
+      max-width: 950px;
+
+      margin: auto;
+
+      position: relative;
+    }
+
+
+    .journey::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 0;
+
+      bottom: 0;
+
+      width: 2px;
+
+      background:
+
+              linear-gradient(
+                      var(--primary),
+                      var(--cyan)
+              );
+
+      transform:
+              translateX(-50%);
+    }
+
+
+    .journey-item {
+
+      width: 50%;
+
+      padding:
+              15px 35px;
+
+      position: relative;
+    }
+
+
+    .journey-item:nth-child(even) {
+
+      margin-left: 50%;
+    }
+
+
+    .journey-dot {
+
+      position: absolute;
+
+      top: 30px;
+
+      width: 15px;
+
+      height: 15px;
+
+      border-radius: 50%;
+
+      background:
+              var(--primary);
+
+      box-shadow:
+              0 0 0 5px
+              rgba(79,70,229,.10);
+    }
+
+
+    .journey-item:nth-child(odd)
+    .journey-dot {
+
+      right: -7px;
+    }
+
+
+    .journey-item:nth-child(even)
+    .journey-dot {
+
+      left: -7px;
+    }
+
+
+    .journey-card {
+
+      padding: 26px;
+
+      border-radius: 20px;
+
+      background: white;
+
+      border:
+              1px solid
+              var(--border);
+
+      box-shadow:
+              0 10px 35px
+              rgba(15,23,42,.05);
+
+      transition: .3s;
+    }
+
+
+    .journey-card:hover {
+
+      transform:
+              translateY(-5px);
+
+      box-shadow:
+              0 20px 50px
+              rgba(15,23,42,.09);
+    }
+
+
+    .journey-year {
+
+      color: var(--primary);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      margin-bottom: 8px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+
+    .journey-card h3 {
+
+      color: var(--dark);
+
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .journey-card p {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       CTA
+    ====================================================== */
+
+    .cta {
+
+      margin:
+              60px 0;
+
+      padding:
+              70px 30px;
+
+      text-align: center;
+
+      border-radius: 30px;
+
+      border:
+              1px solid
+              rgba(79,70,229,.15);
+
+      background:
+
+              radial-gradient(
+                      circle at center,
+                      rgba(99,102,241,.10),
+                      transparent 60%
+              ),
+
+              white;
+
+      box-shadow:
+              0 20px 70px
+              rgba(15,23,42,.08);
+    }
+
+
+    .cta h2 {
+
+      color: var(--dark);
+
+      font-size:
+              clamp(30px,4vw,46px);
+
+      margin-bottom: 12px;
+    }
+
+
+    .cta p {
+
+      max-width: 700px;
+
+      margin:
+              0 auto 25px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    footer {
+
+      margin-top: 40px;
+
+      padding:
+              35px 0;
+
+      background:
+              #0f172a;
+    }
+
+
+    .footer {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    .footer-logo {
+
+      color: white;
+
+      font-size: 26px;
+
+      font-weight: 900;
+    }
+
+
+    .footer-logo span {
+
+      color: #22d3ee;
+    }
+
+
+    .footer p {
+
+      color: #94a3b8;
+
+      font-size: 12px;
+
+      margin-top: 5px;
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .footer-links a {
+
+      color: #cbd5e1;
+
+      font-size: 12px;
+
+      transition: .3s;
+    }
+
+
+    .footer-links a:hover {
+
+      color: #22d3ee;
+    }
+
+
+    /* =====================================================
+       BACK TO TOP
+    ====================================================== */
+
+    #topBtn {
+
+      position: fixed;
+
+      right: 25px;
+
+      bottom: 25px;
+
+      width: 48px;
+
+      height: 48px;
+
+      border: none;
+
+      border-radius: 14px;
+
+      color: white;
+
+      background:
+
+              linear-gradient(
+                      135deg,
+                      var(--primary),
+                      var(--secondary)
+              );
+
+      cursor: pointer;
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition: .3s;
+
+      z-index: 999;
+    }
+
+
+    #topBtn.show {
+
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    /* =====================================================
+       REVEAL ANIMATION
+    ====================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+              translateY(35px);
+
+      transition:
+              opacity .7s ease,
+              transform .7s ease;
+    }
+
+
+    .reveal.show {
+
+      opacity: 1;
+
+      transform:
+              translateY(0);
+    }
+
+
+    /* =====================================================
+       TABLET
+    ====================================================== */
+
+    @media(max-width:1200px) {
+
+      .hero-grid {
+
+        grid-template-columns:
+                    330px 1fr;
+
+      }
+
+      .info-card {
+
+        grid-column:
+                1 / -1;
+
+        display: grid;
+
+        grid-template-columns:
+                    repeat(2, 1fr);
+
+        gap: 10px;
+      }
+
+      .info-title {
+
+        grid-column:
+                1 / -1;
+      }
+
+      .tech-grid {
+
+        grid-template-columns:
+                    repeat(2, 1fr);
+      }
+    }
+
+
+    /* =====================================================
+       MOBILE NAV
+    ====================================================== */
+
+    @media(max-width:950px) {
+
+      .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 82px;
+
+        left: 4%;
+
+        width: 92%;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background:
+                rgba(255,255,255,.98);
+
+        border:
+                1px solid
+                var(--border);
+
+        border-radius: 18px;
+
+        box-shadow:
+                0 25px 60px
+                rgba(15,23,42,.15);
+      }
+
+
+      .nav-links.show {
+
+        display: flex;
+      }
+
+
+      .nav-links a {
+
+        padding: 14px;
+      }
+
+
+      .menu-btn {
+
+        display: block;
+      }
+
+
+      .hire-btn {
+
+        display: none;
+      }
+
+
+      .hero-grid {
+
+        grid-template-columns:
+                    1fr;
+
+        text-align: center;
+      }
+
+
+      .profile-area {
+
+        order: 1;
+      }
+
+
+      .hero-content {
+
+        order: 2;
+
+        margin:
+                auto;
+      }
+
+
+      .info-card {
+
+        order: 3;
+
+        display: block;
+
+        text-align: left;
+      }
+
+
+      .hero-buttons,
+      .socials {
+
+        justify-content: center;
+      }
+
+
+      .story-grid {
+
+        grid-template-columns:
+                    1fr;
+      }
+
+
+      .values {
+
+        grid-template-columns:
+                    1fr 1fr;
+      }
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ====================================================== */
+
+    @media(max-width:650px) {
+
+      .container {
+
+        width: 90%;
+      }
+
+
+      .hero {
+
+        padding:
+                60px 0 40px;
+      }
+
+
+      .profile-frame {
+
+        width: 280px;
+
+        height: 355px;
+      }
+
+
+      .profile-glow {
+
+        width: 270px;
+
+        height: 270px;
+      }
+
+
+      .open-card {
+
+        left: 0;
+
+        bottom: 15px;
+      }
+
+
+      .hero-content h1 {
+
+        font-size: 45px;
+
+        letter-spacing: -2.5px;
+      }
+
+
+      .role {
+
+        font-size: 18px;
+
+        line-height: 1.6;
+      }
+
+
+      .hero-description {
+
+        font-size: 15px;
+      }
+
+
+      .hero-buttons {
+
+        flex-direction: column;
+      }
+
+
+      .btn {
+
+        width: 100%;
+      }
+
+
+      .stats {
+
+        grid-template-columns:
+                    1fr 1fr;
+
+        gap: 20px;
+      }
+
+
+      .stat {
+
+        border: none;
+      }
+
+
+      .stat h3 {
+
+        font-size: 25px;
+      }
+
+
+      .section {
+
+        padding:
+                60px 0;
+      }
+
+
+      .glass-card {
+
+        padding: 25px;
+      }
+
+
+      .values,
+      .tech-grid {
+
+        grid-template-columns:
+                    1fr;
+      }
+
+
+      .journey::before {
+
+        left: 9px;
+      }
+
+
+      .journey-item,
+      .journey-item:nth-child(even) {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding-left: 35px;
+
+        padding-right: 0;
+      }
+
+
+      .journey-item:nth-child(odd)
+      .journey-dot,
+      .journey-item:nth-child(even)
+      .journey-dot {
+
+        left: 2px;
+
+        right: auto;
+      }
+
+
+      .footer {
+
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+
+      .footer-links {
+
+        justify-content: center;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+  <div class="orb orb-one"></div>
+
+  <div class="orb orb-two"></div>
+
+  <div class="orb orb-three"></div>
+
+</div>
+
+
+<div class="grid-bg"></div>
+
+
+<div id="progress"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header>
+
+  <div class="navbar">
+
+
+    <!-- LOGO -->
+
+    <a href="index.html"
+       class="logo">
+
+      JP<span>.</span>
+
+    </a>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <ul class="nav-links"
+          id="navLinks">
+
+
+        <li>
+
+          <a href="index.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="About.html"
+             class="active">
+
+            <i class="fa-solid fa-user"></i>
+
+            About
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Skills.html">
+
+            <i class="fa-solid fa-code"></i>
+
+            Skills
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Experience.html">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            Experience
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Projects.html">
+
+            <i class="fa-solid fa-folder-open"></i>
+
+            Projects
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Achievements.html">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            Achievements
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Education.html">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            Education
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="Contact.html">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Contact
+
+          </a>
+
+        </li>
+
+
+      </ul>
+
+    </nav>
+
+
+    <!-- HIRE -->
+
+    <a href="Contact.html"
+       class="hire-btn">
+
+      Hire Me
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+
+    <!-- MOBILE -->
+
+    <button class="menu-btn"
+            id="menuBtn">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+  <!-- =====================================================
+       HERO SECTION
+  ===================================================== -->
+
+  <section class="hero">
+
+    <div class="container">
+
+
+      <div class="hero-grid">
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-area reveal">
+
+
+          <div class="profile-glow"></div>
+
+
+          <div class="profile-frame">
+
+            <img
+                    src="/images/profile.png"
+                    alt="Jayprakash Gupta Profile Photo">
+
+          </div>
+
+
+          <div class="open-card">
+
+
+            <div class="open-status">
+
+              <span class="status-dot"></span>
+
+              Open to Opportunities
+
+            </div>
+
+
+            <p>
+
+              Software Engineer • BCA Student
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- INTRO -->
+
+        <div class="hero-content reveal">
+
+
+          <div class="small-label">
+
+            <i class="fa-solid fa-user"></i>
+
+            ABOUT ME
+
+          </div>
+
+
+          <h1>
+
+            Hello, I'm
+
+            <br>
+
+            <span class="gradient">
+
+                        Jayprakash Gupta
+
+                    </span>
+
+          </h1>
+
+
+          <div class="role">
+
+            BCA Student
+
+            <span>|</span>
+
+            Aspiring Software Engineer
+
+          </div>
+
+
+          <p class="hero-description">
+
+            I am a passionate technology learner and
+            aspiring Software Engineer who enjoys
+            transforming real-world problems into
+            practical digital solutions.
+
+            I am currently pursuing Bachelor of
+            Computer Applications and continuously
+            improving my programming, software
+            development and problem-solving skills.
+
+          </p>
+
+
+          <div class="hero-buttons">
+
+
+            <a href="/resume/Jayprakash_Gupta_Resume.pdf"
+               target="_blank"
+               class="btn btn-primary">
+
+              <i class="fa-solid fa-file-arrow-down"></i>
+
+              Download Resume
+
+            </a>
+
+
+            <a href="Contact.html"
+               class="btn btn-outline">
+
+              <i class="fa-solid fa-paper-plane"></i>
+
+              Contact Me
+
+            </a>
+
+
+          </div>
+
+
+          <div class="socials">
+
+
+            <a href="https://github.com/YOUR_USERNAME"
+               target="_blank"
+               class="social">
+
+              <i class="fa-brands fa-github"></i>
+
+            </a>
+
+
+            <a href="https://www.linkedin.com/in/YOUR_USERNAME/"
+               target="_blank"
+               class="social">
+
+              <i class="fa-brands fa-linkedin-in"></i>
+
+            </a>
+
+
+            <a href="Contact.html"
+               class="social">
+
+              <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="info-card reveal">
+
+
+          <h3 class="info-title">
+
+            Personal Information
+
+          </h3>
+
+
+          <div class="info-item">
+
+
+            <div class="info-icon">
+
+              <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div>
+
+              <small>
+                Name
+              </small>
+
+              <strong>
+                Jayprakash Gupta
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="info-item">
+
+
+            <div class="info-icon">
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+
+            <div>
+
+              <small>
+                Education
+              </small>
+
+              <strong>
+                Bachelor of Computer Applications
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="info-item">
+
+
+            <div class="info-icon">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+
+            <div>
+
+              <small>
+                Location
+              </small>
+
+              <strong>
+                Madhya Pradesh, India
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="info-item">
+
+
+            <div class="info-icon">
+
+              <i class="fa-solid fa-code"></i>
+
+            </div>
+
+
+            <div>
+
+              <small>
+                Main Focus
+              </small>
+
+              <strong>
+                Software Development
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="info-item">
+
+
+            <div class="info-icon">
+
+              <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+
+            <div>
+
+              <small>
+                Interests
+              </small>
+
+              <strong>
+                Java • AI/ML • Android • Web
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       STATS
+  ===================================================== -->
+
+  <section style="padding-top:0;">
+
+    <div class="container">
+
+
+      <div class="stats reveal">
+
+
+        <div class="stat">
+
+          <i class="fa-solid fa-rocket"></i>
+
+          <h3>6+</h3>
+
+          <p>
+            Projects
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <i class="fa-solid fa-code"></i>
+
+          <h3>10+</h3>
+
+          <p>
+            Technologies
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <i class="fa-solid fa-trophy"></i>
+
+          <h3>2+</h3>
+
+          <p>
+            Years Learning
+          </p>
+
+        </div>
+
+
+        <div class="stat">
+
+          <i class="fa-solid fa-chart-line"></i>
+
+          <h3>100%</h3>
+
+          <p>
+            Growth Mindset
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MY STORY
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <div class="section-header reveal">
+
+        <div class="section-label">
+          MY STORY
+        </div>
+
+
+        <h2>
+          More Than Just Coding
+        </h2>
+
+
+        <p>
+
+          My journey is driven by curiosity,
+          continuous learning and the desire
+          to create technology that solves
+          practical problems.
+
+        </p>
+
+      </div>
+
+
+      <div class="story-grid">
+
+
+        <!-- STORY -->
+
+        <div class="glass-card reveal">
+
+
+          <h3 class="card-heading">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            My Journey
+
+          </h3>
+
+
+          <p class="story-text">
+
+            My interest in technology started
+            with curiosity about how software,
+            websites and applications work.
+
+            That curiosity gradually developed
+            into a strong interest in programming
+            and software development.
+
+          </p>
+
+
+          <p class="story-text">
+
+            During my BCA journey, I have explored
+
+            <span class="highlight">
+                        Java, Spring Boot, Android,
+                        Web Development, Databases,
+                        Artificial Intelligence and
+                        Machine Learning.
+                    </span>
+
+          </p>
+
+
+          <p class="story-text">
+
+            I prefer learning by building real
+            projects because practical development
+            helps me understand how technologies
+            work together to create useful products.
+
+          </p>
+
+
+        </div>
+
+
+        <!-- GOAL -->
+
+        <div class="glass-card reveal">
+
+
+          <h3 class="card-heading">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            My Goal
+
+          </h3>
+
+
+          <p class="story-text">
+
+            My goal is to grow into a skilled
+            Software Engineer who can design,
+            develop and maintain reliable and
+            useful software solutions.
+
+          </p>
+
+
+          <p class="story-text">
+
+            I want to strengthen my knowledge of
+            programming, data structures, backend
+            development, databases, system design
+            and modern technologies.
+
+          </p>
+
+
+          <p class="story-text">
+
+            I also want to work on meaningful
+            products, collaborate with developers
+            and continue learning from real-world
+            software development experiences.
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       DEVELOPER MINDSET
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <div class="section-header reveal">
+
+
+        <div class="section-label">
+          MY MINDSET
+        </div>
+
+
+        <h2>
+          How I Approach Development
+        </h2>
+
+
+        <p>
+
+          These principles guide the way I learn,
+          build projects and solve problems.
+
+        </p>
+
+
+      </div>
+
+
+      <div class="values">
+
+
+        <div class="value-card reveal">
+
+
+          <div class="value-icon">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+          </div>
+
+
+          <h3>
+            Continuous Learning
+          </h3>
+
+
+          <p>
+
+            I continuously learn new programming
+            concepts and technologies to improve
+            my development skills.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="value-card reveal">
+
+
+          <div class="value-icon">
+
+            <i class="fa-solid fa-puzzle-piece"></i>
+
+          </div>
+
+
+          <h3>
+            Problem Solving
+          </h3>
+
+
+          <p>
+
+            I like breaking complex problems into
+            smaller parts and developing practical
+            solutions step by step.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="value-card reveal">
+
+
+          <div class="value-icon">
+
+            <i class="fa-solid fa-rocket"></i>
+
+          </div>
+
+
+          <h3>
+            Build & Experiment
+          </h3>
+
+
+          <p>
+
+            I learn through projects, experiments
+            and by converting ideas into working
+            applications.
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TECHNOLOGIES
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <div class="section-header reveal">
+
+
+        <div class="section-label">
+          TECHNICAL INTERESTS
+        </div>
+
+
+        <h2>
+          Technologies I Work With
+        </h2>
+
+
+        <p>
+
+          My current development areas and
+          technologies of interest.
+
+        </p>
+
+
+      </div>
+
+
+      <div class="tech-grid">
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-brands fa-java"></i>
+
+          <h3>
+            Java
+          </h3>
+
+          <p>
+            Core Java • OOP • DSA
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-solid fa-leaf"></i>
+
+          <h3>
+            Spring Boot
+          </h3>
+
+          <p>
+            Backend • REST APIs
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-solid fa-globe"></i>
+
+          <h3>
+            Web Development
+          </h3>
+
+          <p>
+            HTML • CSS • JavaScript
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-solid fa-database"></i>
+
+          <h3>
+            Databases
+          </h3>
+
+          <p>
+            MySQL • MongoDB
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-brands fa-android"></i>
+
+          <h3>
+            Android
+          </h3>
+
+          <p>
+            Android • Firebase
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-solid fa-robot"></i>
+
+          <h3>
+            Artificial Intelligence
+          </h3>
+
+          <p>
+            AI • RAG • Assistants
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-brands fa-python"></i>
+
+          <h3>
+            Python
+          </h3>
+
+          <p>
+            AI • ML • Data
+          </p>
+
+        </div>
+
+
+        <div class="tech-card reveal">
+
+          <i class="fa-solid fa-server"></i>
+
+          <h3>
+            Backend Development
+          </h3>
+
+          <p>
+            APIs • MVC • Database
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       JOURNEY TIMELINE
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <div class="section-header reveal">
+
+
+        <div class="section-label">
+          MY JOURNEY
+        </div>
+
+
+        <h2>
+          Learning → Building → Growing
+        </h2>
+
+
+        <p>
+
+          My development journey continues through
+          education, projects, hackathons and
+          continuous technical learning.
+
+        </p>
+
+
+      </div>
+
+
+      <div class="journey">
+
+
+        <!-- ITEM 1 -->
+
+        <div class="journey-item reveal">
+
+
+          <div class="journey-dot"></div>
+
+
+          <div class="journey-card">
+
+
+            <div class="journey-year">
+              Education
+            </div>
+
+
+            <h3>
+              Bachelor of Computer Applications
+            </h3>
+
+
+            <p>
+
+              Building a strong foundation in
+              programming, databases, computer
+              applications and software development.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- ITEM 2 -->
+
+        <div class="journey-item reveal">
+
+
+          <div class="journey-dot"></div>
+
+
+          <div class="journey-card">
+
+
+            <div class="journey-year">
+              Programming
+            </div>
+
+
+            <h3>
+              Started Building Software
+            </h3>
+
+
+            <p>
+
+              Explored Java, object-oriented
+              programming, data structures,
+              web development and databases
+              through practical projects.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- ITEM 3 -->
+
+        <div class="journey-item reveal">
+
+
+          <div class="journey-dot"></div>
+
+
+          <div class="journey-card">
+
+
+            <div class="journey-year">
+              Modern Technologies
+            </div>
+
+
+            <h3>
+              Exploring Backend & AI
+            </h3>
+
+
+            <p>
+
+              Started working with Spring Boot,
+              Android, Artificial Intelligence,
+              Machine Learning and RAG concepts.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+        <!-- ITEM 4 -->
+
+        <div class="journey-item reveal">
+
+
+          <div class="journey-dot"></div>
+
+
+          <div class="journey-card">
+
+
+            <div class="journey-year">
+              Next Goal
+            </div>
+
+
+            <h3>
+              Becoming a Software Engineer
+            </h3>
+
+
+            <p>
+
+              Continue improving technical skills,
+              developing real-world projects,
+              participating in hackathons and
+              gaining professional experience.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       CTA
+  ===================================================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+
+      <div class="cta reveal">
+
+
+        <h2>
+          Let's Build Something Useful
+        </h2>
+
+
+        <p>
+
+          I am interested in learning, collaborating
+          on projects and exploring opportunities where
+          I can apply my development skills and continue
+          growing as a Software Engineer.
+
+        </p>
+
+
+        <a href="Contact.html"
+           class="btn btn-primary">
+
+          <i class="fa-solid fa-paper-plane"></i>
+
+          Let's Connect
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="container footer">
+
+
+    <div>
+
+
+      <div class="footer-logo">
+
+        JP<span>.</span>
+
+      </div>
+
+
+      <p>
+
+        Jayprakash Gupta • Aspiring Software Engineer
+
+      </p>
+
+
+    </div>
+
+
+    <div class="footer-links">
+
+
+      <a href="index.html">
+        Home
+      </a>
+
+
+      <a href="Projects.html">
+        Projects
+      </a>
+
+
+      <a href="Achievements.html">
+        Achievements
+      </a>
+
+
+      <a href="Education.html">
+        Education
+      </a>
+
+
+      <a href="Contact.html">
+        Contact
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button id="topBtn">
+
+  <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+  /* =====================================================
+     MOBILE MENU
+  ====================================================== */
+
+  const menuBtn =
+          document.getElementById("menuBtn");
+
+  const navLinks =
+          document.getElementById("navLinks");
+
+
+  menuBtn.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.toggle("show");
+
+
+            if (
+                    navLinks.classList.contains("show")
+            ) {
+
+              menuBtn.innerHTML =
+                      '<i class="fa-solid fa-xmark"></i>';
+
+            } else {
+
+              menuBtn.innerHTML =
+                      '<i class="fa-solid fa-bars"></i>';
+
+            }
+
+          }
+  );
+
+
+  document
+          .querySelectorAll(".nav-links a")
+          .forEach(link => {
+
+            link.addEventListener(
+                    "click",
+                    function () {
+
+                      navLinks.classList.remove("show");
+
+                      menuBtn.innerHTML =
+                              '<i class="fa-solid fa-bars"></i>';
+
+                    }
+            );
+
+          });
+
+
+  /* =====================================================
+     SCROLL REVEAL
+  ====================================================== */
+
+  const revealObserver =
+          new IntersectionObserver(
+                  entries => {
+
+                    entries.forEach(entry => {
+
+                      if (
+                              entry.isIntersecting
+                      ) {
+
+                        entry.target
+                                .classList
+                                .add("show");
+
+                      }
+
+                    });
+
+                  },
+                  {
+                    threshold: .12
+                  }
+          );
+
+
+  document
+          .querySelectorAll(".reveal")
+          .forEach(element => {
+
+            revealObserver.observe(element);
+
+          });
+
+
+  /* =====================================================
+     SCROLL PROGRESS
+  ====================================================== */
+
+  const progress =
+          document.getElementById("progress");
+
+
+  window.addEventListener(
+          "scroll",
+          function () {
+
+            const totalHeight =
+                    document.documentElement.scrollHeight
+                    -
+                    window.innerHeight;
+
+
+            const percentage =
+                    totalHeight > 0
+                            ?
+                            (
+                                    window.scrollY
+                                    /
+                                    totalHeight
+                            ) * 100
+                            :
+                            0;
+
+
+            progress.style.width =
+                    percentage + "%";
+
+          }
+  );
+
+
+  /* =====================================================
+     BACK TO TOP
+  ====================================================== */
+
+  const topBtn =
+          document.getElementById("topBtn");
+
+
+  window.addEventListener(
+          "scroll",
+          function () {
+
+            if (
+                    window.scrollY > 500
+            ) {
+
+              topBtn.classList.add("show");
+
+            } else {
+
+              topBtn.classList.remove("show");
+
+            }
+
+          }
+  );
+
+
+  topBtn.addEventListener(
+          "click",
+          function () {
+
+            window.scrollTo({
+
+              top: 0,
+
+              behavior: "smooth"
+
+            });
+
+          }
+  );
+
+
+  /* =====================================================
+     ACTIVE PAGE
+  ====================================================== */
+
+  const currentPage =
+          window.location.pathname
+                  .split("/")
+                  .pop()
+                  .toLowerCase();
+
+
+  document
+          .querySelectorAll(".nav-links a")
+          .forEach(link => {
+
+            const href =
+                    link.getAttribute("href");
+
+
+            if (!href) return;
+
+
+            const linkPage =
+                    href
+                            .split("/")
+                            .pop()
+                            .toLowerCase();
+
+
+            if (
+                    linkPage === currentPage
+            ) {
+
+              document
+                      .querySelectorAll(".nav-links a")
+                      .forEach(item => {
+
+                        item.classList.remove(
+                                "active"
+                        );
+
+                      });
+
+
+              link.classList.add("active");
+
+            }
+
+          });
+
+</script>
+
+
+</body>
+
+</html>

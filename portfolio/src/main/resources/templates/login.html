@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Jayprakash Gupta</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background:
+                    radial-gradient(circle at top left,#12345c,transparent 40%),
+                    radial-gradient(circle at bottom right,#14204b,transparent 40%),
+                    #040b14;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 25px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 80px rgba(0,0,0,.4);
+        }
+
+        .left {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background:
+                    linear-gradient(
+                            rgba(0,229,255,.08),
+                            rgba(80,60,255,.1)
+                    );
+        }
+
+        .logo {
+            font-size: 35px;
+            font-weight: bold;
+            color: #00e5ff;
+            margin-bottom: 30px;
+        }
+
+        .left h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .left h1 span {
+            color: #00e5ff;
+        }
+
+        .left p {
+            color: #aeb8c5;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .right {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0,0,0,.15);
+        }
+
+        .right h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #8995a5;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #081522;
+            border: 1px solid #25394f;
+            border-radius: 10px;
+            color: white;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0,229,255,.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background: #00e5ff;
+            color: #001018;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,229,255,.2);
+        }
+
+        .register {
+            margin-top: 25px;
+            text-align: center;
+            color: #9ca7b5;
+        }
+
+        .register a {
+            color: #00e5ff;
+            text-decoration: none;
+        }
+
+        .home {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .home a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .error {
+            background: rgba(255,0,0,.1);
+            color: #ff8d8d;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .logout {
+            background: rgba(0,255,150,.08);
+            color: #76ffc2;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media(max-width: 750px) {
+
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                display: none;
+            }
+
+            .right {
+                padding: 40px 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="left">
+
+        <div class="logo">JP.</div>
+
+        <h1>
+            Welcome<br>
+            <span>Back!</span>
+        </h1>
+
+        <p>
+            Login to access your portfolio dashboard
+            and continue your journey with Jayprakash Gupta.
+        </p>
+
+    </div>
+
+    <div class="right">
+
+        <h2>Login</h2>
+
+        <p class="subtitle">
+            Enter your credentials to continue.
+        </p>
+
+        <div
+                th:if="${param.error}"
+                class="error">
+
+            Invalid username or password.
+
+        </div>
+
+        <div
+                th:if="${param.logout}"
+                class="logout">
+
+            You have been logged out successfully.
+
+        </div>
+
+        <form
+                th:action="@{/login}"
+                method="post">
+
+            <label>Username / Email</label>
+
+            <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter username"
+                    required>
+
+            <label>Password</label>
+
+            <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter password"
+                    required>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <div class="register">
+            Don't have an account?
+            <a href="/register">Create Account</a>
+        </div>
+
+        <div class="home">
+            <a href="/">← Back to Portfolio</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
